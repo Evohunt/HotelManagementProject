@@ -130,15 +130,13 @@
                               <Font name="Arial Bold" size="22.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="118.0" layoutY="108.0" prefHeight="374.0" prefWidth="465.0">
+                        <TableView fx:id="table_rooms" editable="true" layoutX="118.0" layoutY="108.0" prefHeight="374.0" prefWidth="465.0">
                           <columns>
-                            <TableColumn prefWidth="102.0" text="Room Number" />
-                            <TableColumn prefWidth="131.0" text="Client Name" />
-                              <TableColumn prefWidth="119.0" text="Check-In Date" />
-                              <TableColumn prefWidth="111.0" text="Check-Out Date" />
+                            <TableColumn fx:id="roomNumber" prefWidth="102.0" text="Room Number" />
+                            <TableColumn fx:id="clientName" prefWidth="131.0" text="Client Name" />
                           </columns>
                         </TableView>
-                        <Button layoutX="473.0" layoutY="505.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="110.0" text="Check Room" />
+                        <Button fx:id="testBtn" layoutX="473.0" layoutY="505.0" mnemonicParsing="false" onAction="#Test" prefHeight="44.0" prefWidth="110.0" text="Check Room" />
                      </children>
                   </AnchorPane>
               </content>

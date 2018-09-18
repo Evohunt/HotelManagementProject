@@ -12,9 +12,6 @@ public class Client implements IClient {
     private Date checkInDate;
     private Date checkOutDate;
 
-    private boolean isCheckedIn = false;
-    private int roomNumber;
-
     public String getName() {
         return name;
     }
@@ -71,19 +68,4 @@ public class Client implements IClient {
         this.checkOutDate = checkOutDate;
     }
 
-    public boolean isCheckedIn() {
-        return isCheckedIn;
-    }
-
-    public void setCheckedIn(boolean checkedIn) {
-        isCheckedIn = checkedIn;
-    }
-
-    public int getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
 }
