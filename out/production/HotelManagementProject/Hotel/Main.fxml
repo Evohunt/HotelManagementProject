@@ -6,8 +6,6 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,49 +38,49 @@
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="304.0" layoutY="152.0" />
+                        <TextField fx:id="book_name" layoutX="304.0" layoutY="152.0" />
                         <Label layoutX="186.0" layoutY="181.0" text="CNP">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="304.0" layoutY="180.0" />
+                        <TextField fx:id="book_cnp" layoutX="304.0" layoutY="180.0" />
                         <Label layoutX="186.0" layoutY="205.0" text="PHONE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="304.0" layoutY="208.0" />
+                        <TextField fx:id="book_phone" layoutX="304.0" layoutY="208.0" />
                         <Label layoutX="186.0" layoutY="232.0" text="EMAIL">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="304.0" layoutY="237.0" />
+                        <TextField fx:id="book_email" layoutX="304.0" layoutY="237.0" />
                         <Label layoutX="186.0" layoutY="267.0" text="ROOM SIZE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="304.0" layoutY="270.0" mnemonicParsing="false" text="2 beds">
+                        <RadioButton fx:id="book_2_beds" layoutX="304.0" layoutY="270.0" mnemonicParsing="false" text="2 beds">
                            <toggleGroup>
                               <ToggleGroup fx:id="roomSize" />
                            </toggleGroup></RadioButton>
-                        <RadioButton layoutX="366.0" layoutY="270.0" mnemonicParsing="false" text="3 beds" toggleGroup="$roomSize" />
-                        <RadioButton layoutX="428.0" layoutY="270.0" mnemonicParsing="false" text="4 beds" toggleGroup="$roomSize" />
+                        <RadioButton fx:id="book_3_beds" layoutX="366.0" layoutY="270.0" mnemonicParsing="false" text="3 beds" toggleGroup="$roomSize" />
+                        <RadioButton fx:id="book_4_beds" layoutX="428.0" layoutY="270.0" mnemonicParsing="false" text="4 beds" toggleGroup="$roomSize" />
                         <Label layoutX="186.0" layoutY="295.0" text="CHECK-IN">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker layoutX="304.0" layoutY="293.0" />
+                        <DatePicker fx:id="book_check_in" layoutX="304.0" layoutY="293.0" />
                         <Label layoutX="186.0" layoutY="323.0" text="CHECK-OUT">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker layoutX="304.0" layoutY="321.0" />
-                        <Button layoutX="453.0" layoutY="394.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="135.0" style="-fx-background-color: green;" text="BOOK NOW" textFill="WHITE">
+                        <DatePicker fx:id="book_check_out" layoutX="304.0" layoutY="321.0" />
+                        <Button fx:id="bookNowBtn" layoutX="453.0" layoutY="394.0" mnemonicParsing="false" onAction="#bookNow" prefHeight="49.0" prefWidth="135.0" style="-fx-background-color: green;" text="BOOK NOW" textFill="WHITE">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -130,13 +128,6 @@
                               <Font name="Arial Bold" size="22.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="table_rooms" editable="true" layoutX="118.0" layoutY="108.0" prefHeight="374.0" prefWidth="465.0">
-                          <columns>
-                            <TableColumn fx:id="roomNumber" prefWidth="102.0" text="Room Number" />
-                            <TableColumn fx:id="clientName" prefWidth="131.0" text="Client Name" />
-                          </columns>
-                        </TableView>
-                        <Button fx:id="testBtn" layoutX="473.0" layoutY="505.0" mnemonicParsing="false" onAction="#Test" prefHeight="44.0" prefWidth="110.0" text="Check Room" />
                      </children>
                   </AnchorPane>
               </content>

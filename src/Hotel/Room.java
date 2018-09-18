@@ -1,6 +1,8 @@
 package Hotel;
 
-public class Room implements IRoom {
+import java.io.Serializable;
+
+public class Room implements IRoom, Serializable {
 
     private int roomNumber;
     private int roomSize;
@@ -8,10 +10,10 @@ public class Room implements IRoom {
     private boolean isBusy = false;
     private boolean isReserved = false;
 
-    public Room(int roomNumber, int roomSize, Client client) {
+    public Room(int roomNumber, Client client) {
         this.roomNumber = roomNumber;
-        this.roomSize = roomSize;
         this.client = client;
+        this.roomSize = client.getRoomSize();
         isReserved = true;
     }
 

@@ -1,8 +1,11 @@
 package Hotel;
 
+import javafx.scene.control.DatePicker;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Client implements IClient {
+public class Client implements IClient, Serializable {
 
     private String name;
     private String cnp;
@@ -56,16 +59,20 @@ public class Client implements IClient {
         return checkInDate;
     }
 
-    public void setCheckInDate(Date checkInDate) {
-        this.checkInDate = checkInDate;
+    public void setCheckInDate(DatePicker checkInDate) {
+        java.sql.Date sqlDate = java.sql.Date.valueOf(checkInDate.getValue());
+        Date date = new Date(sqlDate.getTime());
+        this.checkInDate = date;
     }
 
     public Date getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(Date checkOutDate) {
-        this.checkOutDate = checkOutDate;
+    public void setCheckOutDate(DatePicker checkOutDate) {
+        java.sql.Date sqlDate = java.sql.Date.valueOf(checkOutDate.getValue());
+        Date date = new Date(sqlDate.getTime());
+        this.checkOutDate = date;
     }
 
 }

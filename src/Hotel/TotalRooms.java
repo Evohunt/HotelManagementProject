@@ -1,29 +1,33 @@
 package Hotel;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class TotalRooms {
+public class TotalRooms implements Serializable {
 
-    private ObservableList<IRoom> busyRooms = FXCollections.observableArrayList();
-    private ObservableList<IRoom> reservedRooms = FXCollections.observableArrayList();
+    //private ObservableList<IRoom> busyRooms = FXCollections.observableArrayList();
+
+    private List<IRoom> busyRooms = new ArrayList<>();
+    private List<IRoom> reservedRooms = new ArrayList<>();
     private int free2BedRooms = 20;
     private int free3BedRooms = 10;
     private int free4BedRooms = 7;
 
-    public ObservableList<IRoom> getBusyRooms() {
+
+    public List<IRoom> getBusyRooms() {
         return busyRooms;
     }
 
-    public void setBusyRooms(ObservableList<IRoom> busyRooms) {
+    public void setBusyRooms(List<IRoom> busyRooms) {
         this.busyRooms = busyRooms;
     }
 
-    public ObservableList<IRoom> getReservedRooms() {
+    public List<IRoom> getReservedRooms() {
         return reservedRooms;
     }
 
-    public void setReservedRooms(ObservableList<IRoom> reservedRooms) {
+    public void setReservedRooms(List<IRoom> reservedRooms) {
         this.reservedRooms = reservedRooms;
     }
 

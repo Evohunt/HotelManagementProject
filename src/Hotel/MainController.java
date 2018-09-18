@@ -1,5 +1,52 @@
 package Hotel;
 
+import DataSaving.IRoomsSerializer;
+import DataSaving.RoomsSerializer;
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainController {
 
+    /// Book TAB content
+    public TextField book_name;
+    public TextField book_cnp;
+    public TextField book_phone;
+    public TextField book_email;
+    public ToggleGroup roomSize;
+    public DatePicker book_check_in;
+    public DatePicker book_check_out;
+    public RadioButton book_2_beds;
+    public RadioButton book_3_beds;
+    public RadioButton book_4_beds;
+    public Button bookNowBtn;
+
+    public void bookNow(ActionEvent actionEvent) {
+        Client client = new Client();
+        client.setName(book_name.getText());
+        client.setCnp(book_cnp.getText());
+        client.setPhone(book_phone.getText());
+        client.setEmail(book_email.getText());
+        client.setCheckInDate(book_check_in);
+        client.setCheckOutDate(book_check_out);
+        if (book_2_beds.isSelected()) {
+            client.setRoomSize(2);
+        } else if (book_3_beds.isSelected()) {
+            client.setRoomSize(3);
+        } else if (book_4_beds.isSelected()) {
+            client.setRoomSize(4);
+        }
+
+        TotalRooms rooms = new TotalRooms();
+        rooms.getReservedRooms().add(new Room(304, client));
+        rooms.getReservedRooms().add(new Room(306, client));
+
+        book_cnp.setText(Integer.toString(rooms.getReservedRooms().size()));
+        RoomsSerializer ser = new RoomsSerializer();
+        ser.serialize(rooms, "rooms.ser");
+
+    }
 }
