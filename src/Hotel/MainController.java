@@ -41,8 +41,7 @@ public class MainController {
         }
 
         TotalRooms rooms = new TotalRooms();
-        rooms.getReservedRooms().add(new Room(304, client));
-        rooms.getReservedRooms().add(new Room(306, client));
+        rooms.addReservedRoom(new Room(304, client));
 
         book_cnp.setText(Integer.toString(rooms.getReservedRooms().size()));
         RoomsSerializer ser = new RoomsSerializer();

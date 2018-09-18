@@ -27,6 +27,21 @@ public class TotalRooms implements Serializable {
         return reservedRooms;
     }
 
+    public void addReservedRoom(Room room) {
+        this.reservedRooms.add(room);
+        switch (room.getRoomSize()) {
+            case 2:
+                this.free2BedRooms--;
+                break;
+            case 3:
+                this.free3BedRooms--;
+                break;
+            case 4:
+                this.free4BedRooms--;
+                break;
+        }
+    }
+
     public void setReservedRooms(List<IRoom> reservedRooms) {
         this.reservedRooms = reservedRooms;
     }
