@@ -11,7 +11,6 @@ public class Client implements IClient, Serializable {
     private String cnp;
     private String phone;
     private String email;
-    private int roomSize;
     private Date checkInDate;
     private Date checkOutDate;
 
@@ -45,14 +44,6 @@ public class Client implements IClient, Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getRoomSize() {
-        return roomSize;
-    }
-
-    public void setRoomSize(int roomSize) {
-        this.roomSize = roomSize;
     }
 
     public Date getCheckInDate() {

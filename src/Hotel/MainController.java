@@ -1,13 +1,9 @@
 package Hotel;
 
-import DataSaving.IRoomsSerializer;
 import DataSaving.RoomsSerializer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class MainController {
 
@@ -23,6 +19,7 @@ public class MainController {
     public RadioButton book_3_beds;
     public RadioButton book_4_beds;
     public Button bookNowBtn;
+    public Label book_status_submit;
     private TotalRooms rooms = new TotalRooms();
 
     public void bookNow(ActionEvent actionEvent) {
@@ -35,15 +32,23 @@ public class MainController {
             client.setEmail(book_email.getText());
             client.setCheckInDate(book_check_in);
             client.setCheckOutDate(book_check_out);
+            int desiredRoomSize = 0;
             if (book_2_beds.isSelected()) {
-                client.setRoomSize(2);
+                desiredRoomSize = 2;
             } else if (book_3_beds.isSelected()) {
-                client.setRoomSize(3);
+                desiredRoomSize = 3;
             } else if (book_4_beds.isSelected()) {
-                client.setRoomSize(4);
+                desiredRoomSize = 4;
             }
 
-            rooms.addReservedRoom(new Room(304, client));
+            if (rooms.areFreeRoomsAvailable(desiredRoomSize)) {
+                rooms.addReservedRoom(new Room(client, desiredRoomSize), desiredRoomSize);
+                book_status_submit.setText("");
+            }
+            else {
+                book_status_submit.setText("No more rooms available!");
+            }
+
             RoomsSerializer ser = new RoomsSerializer();
         } catch (Exception e) {
             e.printStackTrace();

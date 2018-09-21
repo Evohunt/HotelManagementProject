@@ -9,13 +9,23 @@ import java.util.List;
 
 public class TotalRooms implements Serializable {
 
-    //private ObservableList<IRoom> busyRooms = FXCollections.observableArrayList();
-
-    private List<IRoom> busyRooms = new ArrayList<>();
-    private List<IRoom> reservedRooms = new ArrayList<>();
-    private int free2BedRooms = 20;
-    private int free3BedRooms = 10;
-    private int free4BedRooms = 7;
+    private List<Room> busyRooms = new ArrayList<>();
+    private List<Room> reservedRooms = new ArrayList<>();
+    private List<Room> freeRooms = new ArrayList<Room>() {{
+        add(new Room(201));
+        add(new Room(202));
+        add(new Room(203));
+        add(new Room(204));
+        add(new Room(205));
+        add(new Room(301));
+        add(new Room(302));
+        add(new Room(303));
+        add(new Room(304));
+        add(new Room(305));
+        //add(new Room(401));
+        //add(new Room(402));
+        //add(new Room(403));
+    }};
     private RoomsSerializer ser = new RoomsSerializer();
 
     public TotalRooms() {
@@ -23,64 +33,79 @@ public class TotalRooms implements Serializable {
         File f = new File("rooms.ser");
         if(f.exists() && !f.isDirectory()) {
             this.reservedRooms = ser.deserialize("rooms.ser").getReservedRooms();
+            this.freeRooms = ser.deserialize("rooms.ser").getFreeRooms();
         }
 
     }
 
-    public List<IRoom> getBusyRooms() {
-        return busyRooms;
+    public boolean areFreeRoomsAvailable(int roomSize) {
+        if (this.freeRooms.size() != 0) {
+            for (Room iterator : freeRooms) {
+                String string = Integer.toString(iterator.getRoomNumber());
+                if (string.startsWith(Integer.toString(roomSize))) {
+                    return true;
+                }
+            }
+        } else {
+            return false;
+        }
+        return false;
     }
 
-    public void setBusyRooms(List<IRoom> busyRooms) {
-        this.busyRooms = busyRooms;
+    public void assignRoomNumber(Room room, int roomSize) {
+        for (Room iterator : freeRooms) {
+            String string = Integer.toString(iterator.getRoomNumber());
+            if (string.startsWith(Integer.toString(roomSize))) {
+                room.setRoomNumber(iterator.getRoomNumber());
+                break;
+            }
+        }
     }
 
-    public List<IRoom> getReservedRooms() {
-        return reservedRooms;
+    public void removeFreeRoomWithNumber(int roomNumber) {
+        for (Room iterator : freeRooms) {
+            String string = Integer.toString(iterator.getRoomNumber());
+            if (string.equals(Integer.toString(roomNumber))) {
+                freeRooms.remove(iterator);
+                break;
+            }
+        }
     }
 
     public void addReservedRoom(Room room) {
-
-        switch (room.getRoomSize()) {
-            case 2:
-                this.free2BedRooms--;
-                break;
-            case 3:
-                this.free3BedRooms--;
-                break;
-            case 4:
-                this.free4BedRooms--;
-                break;
-        }
         this.reservedRooms.add(room);
         ser.serialize(this, "rooms.ser");
     }
 
-    public void setReservedRooms(List<IRoom> reservedRooms) {
+    public void addReservedRoom(Room room, int roomSize) {
+        assignRoomNumber(room, roomSize);
+        removeFreeRoomWithNumber(room.getRoomNumber());
+        this.reservedRooms.add(room);
+        ser.serialize(this, "rooms.ser");
+    }
+
+    public void setReservedRooms(List<Room> reservedRooms) {
         this.reservedRooms = reservedRooms;
     }
 
-    public int getFree2BedRooms() {
-        return free2BedRooms;
+    public List<Room> getFreeRooms() {
+        return freeRooms;
     }
 
-    public void setFree2BedRooms(int free2BedRooms) {
-        this.free2BedRooms = free2BedRooms;
+    public List<Room> getReservedRooms() {
+        return reservedRooms;
     }
 
-    public int getFree3BedRooms() {
-        return free3BedRooms;
+    public void setFreeRooms(List<Room> freeRooms) {
+        this.freeRooms = freeRooms;
     }
 
-    public void setFree3BedRooms(int free3BedRooms) {
-        this.free3BedRooms = free3BedRooms;
+    public List<Room> getBusyRooms() {
+        return busyRooms;
     }
 
-    public int getFree4BedRooms() {
-        return free4BedRooms;
+    public void setBusyRooms(List<Room> busyRooms) {
+        this.busyRooms = busyRooms;
     }
 
-    public void setFree4BedRooms(int free4BedRooms) {
-        this.free4BedRooms = free4BedRooms;
-    }
 }

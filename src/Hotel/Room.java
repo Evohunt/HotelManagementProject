@@ -10,11 +10,14 @@ public class Room implements IRoom, Serializable {
     private boolean isBusy = false;
     private boolean isReserved = false;
 
-    public Room(int roomNumber, Client client) {
-        this.roomNumber = roomNumber;
+    public Room(Client client, int roomSize) {
         this.client = client;
-        this.roomSize = client.getRoomSize();
+        this.roomSize = roomSize;
         isReserved = true;
+    }
+
+    public Room(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     public int getRoomNumber() {
