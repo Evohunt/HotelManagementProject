@@ -1,5 +1,8 @@
 package Hotel;
 
+import DataSaving.RoomsSerializer;
+
+import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,16 @@ public class TotalRooms implements Serializable {
     private int free2BedRooms = 20;
     private int free3BedRooms = 10;
     private int free4BedRooms = 7;
+    private RoomsSerializer ser = new RoomsSerializer();
 
+    public TotalRooms() {
+
+        File f = new File("rooms.ser");
+        if(f.exists() && !f.isDirectory()) {
+            this.reservedRooms = ser.deserialize("rooms.ser").getReservedRooms();
+        }
+
+    }
 
     public List<IRoom> getBusyRooms() {
         return busyRooms;
@@ -28,7 +40,7 @@ public class TotalRooms implements Serializable {
     }
 
     public void addReservedRoom(Room room) {
-        this.reservedRooms.add(room);
+
         switch (room.getRoomSize()) {
             case 2:
                 this.free2BedRooms--;
@@ -40,6 +52,8 @@ public class TotalRooms implements Serializable {
                 this.free4BedRooms--;
                 break;
         }
+        this.reservedRooms.add(room);
+        ser.serialize(this, "rooms.ser");
     }
 
     public void setReservedRooms(List<IRoom> reservedRooms) {

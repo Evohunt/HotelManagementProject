@@ -23,29 +23,31 @@ public class MainController {
     public RadioButton book_3_beds;
     public RadioButton book_4_beds;
     public Button bookNowBtn;
+    private TotalRooms rooms = new TotalRooms();
 
     public void bookNow(ActionEvent actionEvent) {
-        Client client = new Client();
-        client.setName(book_name.getText());
-        client.setCnp(book_cnp.getText());
-        client.setPhone(book_phone.getText());
-        client.setEmail(book_email.getText());
-        client.setCheckInDate(book_check_in);
-        client.setCheckOutDate(book_check_out);
-        if (book_2_beds.isSelected()) {
-            client.setRoomSize(2);
-        } else if (book_3_beds.isSelected()) {
-            client.setRoomSize(3);
-        } else if (book_4_beds.isSelected()) {
-            client.setRoomSize(4);
+
+        try {
+            Client client = new Client();
+            client.setName(book_name.getText());
+            client.setCnp(book_cnp.getText());
+            client.setPhone(book_phone.getText());
+            client.setEmail(book_email.getText());
+            client.setCheckInDate(book_check_in);
+            client.setCheckOutDate(book_check_out);
+            if (book_2_beds.isSelected()) {
+                client.setRoomSize(2);
+            } else if (book_3_beds.isSelected()) {
+                client.setRoomSize(3);
+            } else if (book_4_beds.isSelected()) {
+                client.setRoomSize(4);
+            }
+
+            rooms.addReservedRoom(new Room(304, client));
+            RoomsSerializer ser = new RoomsSerializer();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        TotalRooms rooms = new TotalRooms();
-        rooms.addReservedRoom(new Room(304, client));
-
-        book_cnp.setText(Integer.toString(rooms.getReservedRooms().size()));
-        RoomsSerializer ser = new RoomsSerializer();
-        ser.serialize(rooms, "rooms.ser");
 
     }
 }
