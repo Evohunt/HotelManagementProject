@@ -22,7 +22,7 @@ public class TotalRooms implements Serializable {
         add(new Room(303));
         add(new Room(304));
         add(new Room(305));
-        //add(new Room(401));
+        add(new Room(401));
         //add(new Room(402));
         //add(new Room(403));
     }};
@@ -82,6 +82,21 @@ public class TotalRooms implements Serializable {
         removeFreeRoomWithNumber(room.getRoomNumber());
         this.reservedRooms.add(room);
         ser.serialize(this, "rooms.ser");
+    }
+
+    public String processRoomNumber(String string) {
+        return string.substring(1, 4);
+    }
+
+    public void cancelReservedRoom(int roomNumber) {
+        for (Room iterator : reservedRooms) {
+            String string = Integer.toString(iterator.getRoomNumber());
+            if (string.equals(Integer.toString(roomNumber))) {
+                freeRooms.add(iterator);
+                reservedRooms.remove(iterator);
+                break;
+            }
+        }
     }
 
     public void setReservedRooms(List<Room> reservedRooms) {

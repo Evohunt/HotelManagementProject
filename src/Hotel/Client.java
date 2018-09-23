@@ -3,6 +3,8 @@ package Hotel;
 import javafx.scene.control.DatePicker;
 
 import java.io.Serializable;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client implements IClient, Serializable {
@@ -64,6 +66,16 @@ public class Client implements IClient, Serializable {
         java.sql.Date sqlDate = java.sql.Date.valueOf(checkOutDate.getValue());
         Date date = new Date(sqlDate.getTime());
         this.checkOutDate = date;
+    }
+
+    public String getStringCheckInDate() {
+        Format formatter = new SimpleDateFormat("yyyy/MM/dd");
+        return formatter.format(checkInDate);
+    }
+
+    public String getStringCheckOutDate() {
+        Format formatter = new SimpleDateFormat("yyyy/MM/dd");
+        return formatter.format(checkOutDate);
     }
 
 }

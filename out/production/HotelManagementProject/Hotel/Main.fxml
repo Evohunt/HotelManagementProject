@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -139,7 +140,17 @@
             </Tab>
             <Tab text="CANCEL BOOK">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="UpdateRoomButton" layoutX="452.0" layoutY="440.0" mnemonicParsing="false" onAction="#UpdateRooms" prefHeight="50.0" prefWidth="133.0" text="Update List" />
+                        <ListView fx:id="cancelBookList" layoutX="116.0" layoutY="49.0" onMouseClicked="#RemoveBookedRoom" prefHeight="358.0" prefWidth="469.0" />
+                        <Button fx:id="CancelBookBtn" layoutX="304.0" layoutY="440.0" mnemonicParsing="false" onAction="#CancelBook" prefHeight="50.0" prefWidth="133.0" text="Cancel Book" />
+                        <Label fx:id="cancelBookStatusLabel" alignment="CENTER" layoutX="212.0" layoutY="514.0" prefHeight="30.0" prefWidth="317.0" textFill="#d30000">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
               </content>
             </Tab>
         </tabs>

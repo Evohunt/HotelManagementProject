@@ -1,9 +1,11 @@
 package Hotel;
 
-import DataSaving.RoomsSerializer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
+import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class MainController {
 
@@ -21,6 +23,12 @@ public class MainController {
     public Button bookNowBtn;
     public Label book_status_submit;
     private TotalRooms rooms = new TotalRooms();
+
+    /// Cancel Book TAB content
+    public Button UpdateRoomButton;
+    public ListView cancelBookList;
+    public Button CancelBookBtn;
+    public Label cancelBookStatusLabel;
 
     public void bookNow(ActionEvent actionEvent) {
 
@@ -49,10 +57,41 @@ public class MainController {
                 book_status_submit.setText("No more rooms available!");
             }
 
-            RoomsSerializer ser = new RoomsSerializer();
+            book_name.setText("");
+            book_cnp.setText("");
+            book_email.setText("");
+            book_phone.setText("");
+            book_2_beds.setSelected(false);
+            book_3_beds.setSelected(false);
+            book_4_beds.setSelected(false);
+            book_check_in.getEditor().clear();
+            book_check_out.getEditor().clear();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    public void UpdateRooms(ActionEvent actionEvent) {
+        cancelBookList.getItems().clear();
+        for (Room iterator : rooms.getReservedRooms()) {
+            cancelBookList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                                          iterator.getClient().getName() + "     -     " +
+                                          iterator.getClient().getStringCheckInDate() + "     -     " +
+                                          iterator.getClient().getStringCheckOutDate());
+        }
+    }
+
+    public void RemoveBookedRoom(MouseEvent mouseEvent) {
+        //book_name.setText(cancelBookList.getSelectionModel().getSelectedItems().toString());
+    }
+
+    public void CancelBook(ActionEvent actionEvent) {
+        if (cancelBookList.getSelectionModel().getSelectedIndex() == -1) {
+            cancelBookStatusLabel.setText("Please select a room first!");
+        } else {
+            rooms.cancelReservedRoom(Integer.parseInt(rooms.processRoomNumber(cancelBookList.getSelectionModel().getSelectedItems().toString())));
+        }
     }
 }
