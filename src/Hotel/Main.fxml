@@ -86,11 +86,6 @@
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Button>
-                        <Label fx:id="book_status_submit" alignment="CENTER" layoutX="179.0" layoutY="487.0" prefHeight="29.0" prefWidth="342.0" textFill="RED">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
                      </children>
                   </AnchorPane>
             </content>
@@ -99,13 +94,15 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="155.0" layoutY="149.0" text="CNP">
+                        <Label layoutX="39.0" layoutY="51.0" text="NAME">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="216.0" layoutY="147.0" prefHeight="25.0" prefWidth="197.0" />
-                        <Button layoutX="439.0" layoutY="141.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="Submit" />
+                        <TextField fx:id="checkInName" layoutX="113.0" layoutY="49.0" prefHeight="25.0" prefWidth="197.0" />
+                        <Button fx:id="checkInSearchBtn" layoutX="336.0" layoutY="43.0" mnemonicParsing="false" onAction="#CheckInSearch" prefHeight="38.0" prefWidth="94.0" text="Search" />
+                        <ListView fx:id="checkInList" layoutX="39.0" layoutY="97.0" prefHeight="338.0" prefWidth="391.0" />
+                        <Button fx:id="checkInSubmitBtn" layoutX="494.0" layoutY="466.0" mnemonicParsing="false" onAction="#CheckInSubmit" prefHeight="58.0" prefWidth="144.0" text="Check In" />
                      </children>
                   </AnchorPane>
               </content>

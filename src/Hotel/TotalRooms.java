@@ -34,6 +34,7 @@ public class TotalRooms implements Serializable {
         if(f.exists() && !f.isDirectory()) {
             this.reservedRooms = ser.deserialize("rooms.ser").getReservedRooms();
             this.freeRooms = ser.deserialize("rooms.ser").getFreeRooms();
+            this.busyRooms = ser.deserialize("rooms.ser").getBusyRooms();
         }
 
     }
@@ -97,6 +98,30 @@ public class TotalRooms implements Serializable {
                 break;
             }
         }
+        ser.serialize(this, "rooms.ser");
+    }
+
+    public boolean hasClientReservedRoom(String name) {
+        for (Room iterator : reservedRooms) {
+            String string = iterator.getClient().getName();
+            if (string.equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void moveRoomFromReservedToBusy(int roomNumber) {
+        for (Room iterator : reservedRooms) {
+            String string;
+            string = Integer.toString(iterator.getRoomNumber());
+            if (string.equals(Integer.toString(roomNumber))) {
+                busyRooms.add(iterator);
+                reservedRooms.remove(iterator);
+                break;
+            }
+        }
+        ser.serialize(this, "rooms.ser");
     }
 
     public void setReservedRooms(List<Room> reservedRooms) {
