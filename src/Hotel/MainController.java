@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Border;
+import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,6 +56,17 @@ public class MainController {
     public ListView reservedRoomsList;
     public Button checkRoomBtn;
     public Button updateListsBtn;
+    public Pane roomStatusPanel;
+    public Button roomStatusBtnOk;
+    public Label roomStatusRoomNumber;
+    public Label roomStatusRoomSize;
+    public Label roomStatusRoomStatus;
+    public Label roomStatusClientName;
+    public Label roomStatusClientCNP;
+    public Label roomStatusClientPhone;
+    public Label roomStatusClientEmail;
+    public Label roomStatusCheckIn;
+    public Label roomStatusCheckOut;
 
     public void bookNow(ActionEvent actionEvent) {
 
@@ -158,26 +170,63 @@ public class MainController {
     }
 
     public void CheckRoom(ActionEvent actionEvent) {
-
+        if (busyRoomsList.getSelectionModel().getSelectedIndex() != -1) {
+            roomStatusPanel.setVisible(true);
+            for (Room iterator : rooms.getBusyRooms()) {
+                String string = rooms.processRoomNumber(busyRoomsList.getSelectionModel().getSelectedItems().toString());
+                if (Integer.toString(iterator.getRoomNumber()).equals(string)) {
+                    roomStatusRoomNumber.setText(Integer.toString(iterator.getRoomNumber()));
+                    roomStatusRoomSize.setText(Integer.toString(iterator.getRoomSize()) + " beds");
+                    roomStatusRoomStatus.setText("Busy");
+                    roomStatusClientName.setText(iterator.getClient().getName());
+                    roomStatusClientCNP.setText(iterator.getClient().getCnp());
+                    roomStatusClientPhone.setText(iterator.getClient().getPhone());
+                    roomStatusClientEmail.setText(iterator.getClient().getEmail());
+                    roomStatusCheckIn.setText(iterator.getClient().getStringCheckInDate());
+                    roomStatusCheckOut.setText(iterator.getClient().getStringCheckOutDate());
+                }
+            }
+        } else if (reservedRoomsList.getSelectionModel().getSelectedIndex() != -1) {
+            roomStatusPanel.setVisible(true);
+            for (Room iterator : rooms.getReservedRooms()) {
+                String string = rooms.processRoomNumber(reservedRoomsList.getSelectionModel().getSelectedItems().toString());
+                if (Integer.toString(iterator.getRoomNumber()).equals(string)) {
+                    roomStatusRoomNumber.setText(Integer.toString(iterator.getRoomNumber()));
+                    roomStatusRoomSize.setText(Integer.toString(iterator.getRoomSize()) + " beds");
+                    roomStatusRoomStatus.setText("Reserved");
+                    roomStatusClientName.setText(iterator.getClient().getName());
+                    roomStatusClientCNP.setText(iterator.getClient().getCnp());
+                    roomStatusClientPhone.setText(iterator.getClient().getPhone());
+                    roomStatusClientEmail.setText(iterator.getClient().getEmail());
+                    roomStatusCheckIn.setText(iterator.getClient().getStringCheckInDate());
+                    roomStatusCheckOut.setText(iterator.getClient().getStringCheckOutDate());
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(new Frame(), "Please make a selection!", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     public void UpdateLists(ActionEvent actionEvent) {
+        busyRoomsList.getItems().clear();
+        reservedRoomsList.getItems().clear();
+        for (Room iterator : rooms.getBusyRooms()) {
+            busyRoomsList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                    iterator.getClient().getName() + "     -     " +
+                    iterator.getClient().getStringCheckInDate() + "     -     " +
+                    iterator.getClient().getStringCheckOutDate());
+        }
+        for (Room iterator : rooms.getReservedRooms()) {
+            reservedRoomsList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                    iterator.getClient().getName() + "     -     " +
+                    iterator.getClient().getStringCheckInDate() + "     -     " +
+                    iterator.getClient().getStringCheckOutDate());
+        }
 
-            busyRoomsList.getItems().clear();
-            reservedRoomsList.getItems().clear();
-            for (Room iterator : rooms.getBusyRooms()) {
-                busyRoomsList.getItems().add(iterator.getRoomNumber() + "     -     " +
-                        iterator.getClient().getName() + "     -     " +
-                        iterator.getClient().getStringCheckInDate() + "     -     " +
-                        iterator.getClient().getStringCheckOutDate());
-            }
-            for (Room iterator : rooms.getReservedRooms()) {
-                reservedRoomsList.getItems().add(iterator.getRoomNumber() + "     -     " +
-                        iterator.getClient().getName() + "     -     " +
-                        iterator.getClient().getStringCheckInDate() + "     -     " +
-                        iterator.getClient().getStringCheckOutDate());
-            }
+    }
 
+    public void roomStatusClose(ActionEvent actionEvent) {
+        roomStatusPanel.setVisible(false);
     }
 
     public void tabChangeHome(MouseEvent mouseEvent) {
@@ -280,6 +329,5 @@ public class MainController {
         btnExit.setStyle("-fx-border-color: transparent");
         btnExit.setStyle("-fx-background-color: #28056b");
     }
-
 
 }
