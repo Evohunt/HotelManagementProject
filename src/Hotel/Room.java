@@ -1,12 +1,16 @@
 package Hotel;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class Room implements IRoom, Serializable {
 
     private int roomNumber;
     private int roomSize;
     private Client client;
+    private double roomPrice;
     private boolean isBusy = false;
     private boolean isReserved = false;
 
@@ -14,6 +18,11 @@ public class Room implements IRoom, Serializable {
         this.client = client;
         this.roomSize = roomSize;
         isReserved = true;
+    }
+
+    public long calculateRoomPrice() {
+        long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
+        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS) * 250;
     }
 
     public Room(int roomNumber) {
@@ -58,5 +67,13 @@ public class Room implements IRoom, Serializable {
 
     public void setReserved(boolean reserved) {
         isReserved = reserved;
+    }
+
+    public double getRoomPrice() {
+        return roomPrice;
+    }
+
+    public void setRoomPrice(double roomPrice) {
+        this.roomPrice = roomPrice;
     }
 }

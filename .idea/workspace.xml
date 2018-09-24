@@ -12,6 +12,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/HotelManagementProject$Main.ic" NAME="Main Coverage Results" MODIFIED="1537804506276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Hotel.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -83,8 +88,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Hotel/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="228" column="57" lean-forward="true" selection-start-line="228" selection-start-column="57" selection-end-line="228" selection-end-column="57" />
+            <state relative-caret-position="166">
+              <caret line="179" column="57" lean-forward="true" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#10433#10434#0" expanded="true" />
@@ -192,8 +197,11 @@
       <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="255">
+              <caret line="23" column="106" lean-forward="true" selection-start-line="23" selection-start-column="106" selection-end-line="23" selection-end-column="106" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -223,11 +231,11 @@
         <option value="$PROJECT_DIR$/src/Hotel/Rooms.java" />
         <option value="$PROJECT_DIR$/src/DataSaving/RoomsSerializer.java" />
         <option value="$PROJECT_DIR$/src/DataSaving/IRoomsSerializer.java" />
-        <option value="$PROJECT_DIR$/src/Hotel/Room.java" />
         <option value="$PROJECT_DIR$/src/Hotel/Client.java" />
         <option value="$PROJECT_DIR$/src/Hotel/TotalRooms.java" />
         <option value="$PROJECT_DIR$/src/Hotel/Main.java" />
         <option value="$PROJECT_DIR$/src/Hotel/Main.fxml" />
+        <option value="$PROJECT_DIR$/src/Hotel/Room.java" />
         <option value="$PROJECT_DIR$/src/Hotel/MainController.java" />
       </list>
     </option>
@@ -407,16 +415,15 @@
       <workItem from="1537554300285" duration="6131000" />
       <workItem from="1537602969518" duration="1536000" />
       <workItem from="1537694665459" duration="13297000" />
-      <workItem from="1537794408462" duration="9577000" />
+      <workItem from="1537794408462" duration="11280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41335000" />
+    <option name="totallyTimeSpent" value="43038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="TODO" order="8" />
@@ -424,11 +431,12 @@
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014641" side_tool="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021962" side_tool="true" weight="0.3290938" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49853587" visible="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4978038" weight="0.3290938" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
@@ -465,7 +473,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -552,6 +560,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,13 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataSaving/IRoomsSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1082,10 +1086,20 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="106" lean-forward="true" selection-start-line="23" selection-start-column="106" selection-end-line="23" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Hotel/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="228" column="57" lean-forward="true" selection-start-line="228" selection-start-column="57" selection-end-line="228" selection-end-column="57" />
+        <state relative-caret-position="166">
+          <caret line="179" column="57" lean-forward="true" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#10433#10434#0" expanded="true" />
