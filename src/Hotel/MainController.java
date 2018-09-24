@@ -225,6 +225,14 @@ public class MainController {
 
     }
 
+    public void busyRoomsSelect(MouseEvent mouseEvent) {
+        reservedRoomsList.getSelectionModel().select(-1);
+    }
+
+    public void reservedRoomsSelect(MouseEvent mouseEvent) {
+        busyRoomsList.getSelectionModel().select(-1);
+    }
+
     public void roomStatusClose(ActionEvent actionEvent) {
         roomStatusPanel.setVisible(false);
     }

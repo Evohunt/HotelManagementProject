@@ -223,8 +223,8 @@
                                     <Font name="Arial Bold" size="17.0" />
                                  </font>
                               </Label>
-                              <ListView fx:id="busyRoomsList" layoutX="19.0" layoutY="54.0" prefHeight="400.0" prefWidth="328.0" />
-                              <ListView fx:id="reservedRoomsList" layoutX="353.0" layoutY="54.0" prefHeight="400.0" prefWidth="328.0" />
+                              <ListView fx:id="busyRoomsList" layoutX="19.0" layoutY="54.0" onMouseClicked="#busyRoomsSelect" prefHeight="400.0" prefWidth="328.0" />
+                              <ListView fx:id="reservedRoomsList" layoutX="353.0" layoutY="54.0" onMouseClicked="#reservedRoomsSelect" prefHeight="400.0" prefWidth="328.0" />
                               <Button fx:id="checkRoomBtn" layoutX="284.0" layoutY="467.0" mnemonicParsing="false" onAction="#CheckRoom" prefHeight="50.0" prefWidth="133.0" text="Check Room">
                                  <font>
                                     <Font name="Arial Bold" size="17.0" />
