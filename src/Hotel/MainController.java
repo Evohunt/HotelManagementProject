@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Border;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +28,16 @@ public class MainController {
     public Button bookNowBtn;
     private TotalRooms rooms = new TotalRooms();
 
+    /// TAB Changer Buttons
+    public TabPane mainTabPane;
+    public Label btnHome;
+    public Label btnBook;
+    public Label btnCheckIn;
+    public Label btnCheckOut;
+    public Label btnRooms;
+    public Label btnCancelBook;
+    public Label btnExit;
+
     /// Cancel Book TAB content
     public Button UpdateRoomButton;
     public ListView cancelBookList;
@@ -38,6 +49,12 @@ public class MainController {
     public Button checkInSearchBtn;
     public ListView checkInList;
     public Button checkInSubmitBtn;
+
+    /// Check Room TAB content
+    public ListView busyRoomsList;
+    public ListView reservedRoomsList;
+    public Button checkRoomBtn;
+    public Button updateListsBtn;
 
     public void bookNow(ActionEvent actionEvent) {
 
@@ -139,4 +156,130 @@ public class MainController {
             }
         }
     }
+
+    public void CheckRoom(ActionEvent actionEvent) {
+
+    }
+
+    public void UpdateLists(ActionEvent actionEvent) {
+
+            busyRoomsList.getItems().clear();
+            reservedRoomsList.getItems().clear();
+            for (Room iterator : rooms.getBusyRooms()) {
+                busyRoomsList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                        iterator.getClient().getName() + "     -     " +
+                        iterator.getClient().getStringCheckInDate() + "     -     " +
+                        iterator.getClient().getStringCheckOutDate());
+            }
+            for (Room iterator : rooms.getReservedRooms()) {
+                reservedRoomsList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                        iterator.getClient().getName() + "     -     " +
+                        iterator.getClient().getStringCheckInDate() + "     -     " +
+                        iterator.getClient().getStringCheckOutDate());
+            }
+
+    }
+
+    public void tabChangeHome(MouseEvent mouseEvent) {
+        mainTabPane.getSelectionModel().select(0);
+    }
+
+    public void TabChangeHomeHover(MouseEvent mouseEvent) {
+        btnHome.setStyle("-fx-border-color: white");
+    }
+
+    public void TabChangeHomeExit(MouseEvent mouseEvent) {
+        btnHome.setStyle("-fx-border-color: transparent");
+        btnHome.setStyle("-fx-background-color: #28056b");
+    }
+
+
+
+    public void tabChangeBook(MouseEvent mouseEvent) {
+        mainTabPane.getSelectionModel().select(1);
+    }
+
+    public void TabChangeBookHover(MouseEvent mouseEvent) {
+        btnBook.setStyle("-fx-border-color: white");
+    }
+
+    public void TabChangeBookExit(MouseEvent mouseEvent) {
+        btnBook.setStyle("-fx-border-color: transparent");
+        btnBook.setStyle("-fx-background-color: #28056b");
+    }
+
+
+
+    public void tabChangeCheckIn(MouseEvent mouseEvent) {
+        mainTabPane.getSelectionModel().select(2);
+    }
+
+    public void TabChangeCheckInHover(MouseEvent mouseEvent) {
+        btnCheckIn.setStyle("-fx-border-color: white");
+    }
+
+    public void TabChangeCheckInExit(MouseEvent mouseEvent) {
+        btnCheckIn.setStyle("-fx-border-color: transparent");
+        btnCheckIn.setStyle("-fx-background-color: #28056b");
+    }
+
+
+
+    public void tabChangeCheckOut(MouseEvent mouseEvent) {
+        mainTabPane.getSelectionModel().select(3);
+    }
+
+    public void TabChangeCheckOutHover(MouseEvent mouseEvent) {
+        btnCheckOut.setStyle("-fx-border-color: white");
+    }
+
+    public void TabChangeCheckOutExit(MouseEvent mouseEvent) {
+        btnCheckOut.setStyle("-fx-border-color: transparent");
+        btnCheckOut.setStyle("-fx-background-color: #28056b");
+    }
+
+
+
+    public void tabChangeRooms(MouseEvent mouseEvent) {
+        mainTabPane.getSelectionModel().select(4);
+    }
+
+    public void TabChangeRoomsHover(MouseEvent mouseEvent) {
+        btnRooms.setStyle("-fx-border-color: white");
+    }
+
+    public void TabChangeRoomsExit(MouseEvent mouseEvent) {
+        btnRooms.setStyle("-fx-border-color: transparent");
+        btnRooms.setStyle("-fx-background-color: #28056b");
+    }
+
+
+
+    public void tabChangeCancelBook(MouseEvent mouseEvent) {
+        mainTabPane.getSelectionModel().select(5);
+    }
+
+    public void TabChangeCancelBookHover(MouseEvent mouseEvent) {
+        btnCancelBook.setStyle("-fx-border-color: white");
+    }
+
+    public void TabChangeCancelBookExit(MouseEvent mouseEvent) {
+        btnCancelBook.setStyle("-fx-border-color: transparent");
+        btnCancelBook.setStyle("-fx-background-color: #28056b");
+    }
+
+    public void ExitApp(MouseEvent mouseEvent) {
+        System.exit(0);
+    }
+
+    public void btnExitHover(MouseEvent mouseEvent) {
+        btnExit.setStyle("-fx-border-color: white");
+    }
+
+    public void btnExitExit(MouseEvent mouseEvent) {
+        btnExit.setStyle("-fx-border-color: transparent");
+        btnExit.setStyle("-fx-background-color: #28056b");
+    }
+
+
 }

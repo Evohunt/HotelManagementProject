@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
@@ -23,134 +24,238 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <TabPane prefHeight="600.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="HOME">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-          <Tab text="BOOK">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="186.0" layoutY="153.0" text="NAME">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="book_name" layoutX="304.0" layoutY="152.0" />
-                        <Label layoutX="186.0" layoutY="181.0" text="CNP">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="book_cnp" layoutX="304.0" layoutY="180.0" />
-                        <Label layoutX="186.0" layoutY="205.0" text="PHONE">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="book_phone" layoutX="304.0" layoutY="208.0" />
-                        <Label layoutX="186.0" layoutY="232.0" text="EMAIL">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="book_email" layoutX="304.0" layoutY="237.0" />
-                        <Label layoutX="186.0" layoutY="267.0" text="ROOM SIZE">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <RadioButton fx:id="book_2_beds" layoutX="304.0" layoutY="270.0" mnemonicParsing="false" text="2 beds">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="roomSize" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton fx:id="book_3_beds" layoutX="366.0" layoutY="270.0" mnemonicParsing="false" text="3 beds" toggleGroup="$roomSize" />
-                        <RadioButton fx:id="book_4_beds" layoutX="428.0" layoutY="270.0" mnemonicParsing="false" text="4 beds" toggleGroup="$roomSize" />
-                        <Label layoutX="186.0" layoutY="295.0" text="CHECK-IN">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <DatePicker fx:id="book_check_in" layoutX="304.0" layoutY="293.0" />
-                        <Label layoutX="186.0" layoutY="323.0" text="CHECK-OUT">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <DatePicker fx:id="book_check_out" layoutX="304.0" layoutY="321.0" />
-                        <Button fx:id="bookNowBtn" layoutX="453.0" layoutY="394.0" mnemonicParsing="false" onAction="#bookNow" prefHeight="49.0" prefWidth="135.0" style="-fx-background-color: green;" text="BOOK NOW" textFill="WHITE">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="CHECK-IN">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="39.0" layoutY="51.0" text="NAME">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="checkInName" layoutX="113.0" layoutY="49.0" prefHeight="25.0" prefWidth="197.0" />
-                        <Button fx:id="checkInSearchBtn" layoutX="336.0" layoutY="43.0" mnemonicParsing="false" onAction="#CheckInSearch" prefHeight="38.0" prefWidth="94.0" text="Search" />
-                        <ListView fx:id="checkInList" layoutX="39.0" layoutY="97.0" prefHeight="338.0" prefWidth="391.0" />
-                        <Button fx:id="checkInSubmitBtn" layoutX="494.0" layoutY="466.0" mnemonicParsing="false" onAction="#CheckInSubmit" prefHeight="58.0" prefWidth="144.0" text="Check In" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="CHECK-OUT">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="155.0" layoutY="149.0" text="CNP">
-                           <font>
-                              <Font name="Arial Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="216.0" layoutY="147.0" prefHeight="25.0" prefWidth="197.0" />
-                        <Button layoutX="439.0" layoutY="141.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="Submit" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="ROOMS">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="33.0" layoutY="40.0" text="Select a room to check">
-                           <font>
-                              <Font name="Arial Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="CANCEL BOOK">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="UpdateRoomButton" layoutX="452.0" layoutY="440.0" mnemonicParsing="false" onAction="#UpdateRooms" prefHeight="50.0" prefWidth="133.0" text="Update List" />
-                        <ListView fx:id="cancelBookList" layoutX="116.0" layoutY="49.0" onMouseClicked="#RemoveBookedRoom" prefHeight="358.0" prefWidth="469.0" />
-                        <Button fx:id="CancelBookBtn" layoutX="304.0" layoutY="440.0" mnemonicParsing="false" onAction="#CancelBook" prefHeight="50.0" prefWidth="133.0" text="Cancel Book" />
-                        <Label fx:id="cancelBookStatusLabel" alignment="CENTER" layoutX="212.0" layoutY="514.0" prefHeight="30.0" prefWidth="317.0" textFill="#d30000">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                        </Label>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-        </tabs>
-      </TabPane>
+      <Pane prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="201.0" style="-fx-background-color: #190342;">
+               <children>
+                  <Label fx:id="btnHome" alignment="CENTER" layoutY="218.0" onMouseClicked="#tabChangeHome" onMouseEntered="#TabChangeHomeHover" onMouseExited="#TabChangeHomeExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="HOME" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnBook" alignment="CENTER" layoutY="276.0" onMouseClicked="#tabChangeBook" onMouseEntered="#TabChangeBookHover" onMouseExited="#TabChangeBookExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="BOOK" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnCheckIn" alignment="CENTER" layoutY="334.0" onMouseClicked="#tabChangeCheckIn" onMouseEntered="#TabChangeCheckInHover" onMouseExited="#TabChangeCheckInExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="CHECK-IN" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnCheckOut" alignment="CENTER" layoutY="392.0" onMouseClicked="#tabChangeCheckOut" onMouseEntered="#TabChangeCheckOutHover" onMouseExited="#TabChangeCheckOutExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="CHECK-OUT" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnRooms" alignment="CENTER" layoutY="450.0" onMouseClicked="#tabChangeRooms" onMouseEntered="#TabChangeRoomsHover" onMouseExited="#TabChangeRoomsExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="ROOMS" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnCancelBook" alignment="CENTER" layoutY="508.0" onMouseClicked="#tabChangeCancelBook" onMouseEntered="#TabChangeCancelBookHover" onMouseExited="#TabChangeCancelBookExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="CANCEL BOOK" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnExit" alignment="CENTER" layoutX="5.0" layoutY="4.0" onMouseClicked="#ExitApp" onMouseEntered="#btnExitHover" onMouseExited="#btnExitExit" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #350187;" text="EXIT" textFill="#c6c6c6">
+                     <font>
+                        <Font name="American Captain" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="63.0" prefHeight="96.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="HOTEL MANAGER" textFill="#c9c9c9">
+                     <font>
+                        <Font name="American Captain" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TabPane fx:id="mainTabPane" layoutX="200.0" prefHeight="600.0" prefWidth="700.0" style="-fx-tab-max-height: -10;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="HOME">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="652.0" prefWidth="700.0" />
+                  </content>
+                </Tab>
+                <Tab text="BOOK">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="170.0" layoutY="161.0" prefHeight="35.0" prefWidth="105.0" text="NAME">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="book_name" layoutX="296.0" layoutY="161.0" prefHeight="35.0" prefWidth="220.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="170.0" layoutY="199.0" prefHeight="35.0" prefWidth="105.0" text="CNP">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="book_cnp" layoutX="296.0" layoutY="199.0" prefHeight="35.0" prefWidth="220.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="170.0" layoutY="237.0" prefHeight="35.0" prefWidth="105.0" text="PHONE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="book_phone" layoutX="296.0" layoutY="237.0" prefHeight="35.0" prefWidth="220.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="170.0" layoutY="275.0" prefHeight="35.0" prefWidth="105.0" text="EMAIL">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="book_email" layoutX="296.0" layoutY="275.0" prefHeight="35.0" prefWidth="220.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="170.0" layoutY="317.0" prefHeight="35.0" prefWidth="105.0" text="ROOM SIZE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="book_2_beds" layoutX="296.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="2 beds">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="roomSize" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="book_3_beds" layoutX="376.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="3 beds" toggleGroup="$roomSize">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="book_4_beds" layoutX="456.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="4 beds" toggleGroup="$roomSize">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <Label layoutX="170.0" layoutY="361.0" prefHeight="35.0" prefWidth="105.0" text="CHECK-IN">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="book_check_in" layoutX="296.0" layoutY="361.0" prefHeight="35.0" prefWidth="220.0" />
+                              <Label layoutX="170.0" layoutY="399.0" prefHeight="35.0" prefWidth="112.0" text="CHECK-OUT">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="book_check_out" layoutX="296.0" layoutY="399.0" prefHeight="35.0" prefWidth="220.0" />
+                              <Button fx:id="bookNowBtn" layoutX="445.0" layoutY="478.0" mnemonicParsing="false" onAction="#bookNow" prefHeight="58.0" prefWidth="156.0" style="-fx-background-color: green;" text="BOOK NOW" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="CHECK-IN">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="39.0" layoutY="51.0" prefHeight="35.0" prefWidth="74.0" text="NAME">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="checkInName" layoutX="122.0" layoutY="51.0" prefHeight="35.0" prefWidth="276.0" />
+                              <Button fx:id="checkInSearchBtn" layoutX="415.0" layoutY="47.0" mnemonicParsing="false" onAction="#CheckInSearch" prefHeight="44.0" prefWidth="125.0" text="Search">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <ListView fx:id="checkInList" layoutX="40.0" layoutY="100.0" prefHeight="400.0" prefWidth="500.0" />
+                              <Button fx:id="checkInSubmitBtn" layoutX="466.0" layoutY="513.0" mnemonicParsing="false" onAction="#CheckInSubmit" prefHeight="68.0" prefWidth="149.0" text="Check In">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="CHECK-OUT">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView layoutX="100.0" layoutY="72.0" prefHeight="400.0" prefWidth="500.0" />
+                              <Button layoutX="212.0" layoutY="494.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" text="Check Out">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="355.0" layoutY="494.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" text="Update List">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="ROOMS">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="busyRoomsList" layoutX="19.0" layoutY="54.0" prefHeight="400.0" prefWidth="328.0" />
+                              <ListView fx:id="reservedRoomsList" layoutX="353.0" layoutY="54.0" prefHeight="400.0" prefWidth="328.0" />
+                              <Button fx:id="checkRoomBtn" layoutX="284.0" layoutY="467.0" mnemonicParsing="false" onAction="#CheckRoom" prefHeight="50.0" prefWidth="133.0" text="Check Room">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateListsBtn" layoutX="284.0" layoutY="524.0" mnemonicParsing="false" onAction="#UpdateLists" prefHeight="50.0" prefWidth="133.0" text="Update Lists">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="CANCEL BOOK">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="UpdateRoomButton" layoutX="355.0" layoutY="519.0" mnemonicParsing="false" onAction="#UpdateRooms" prefHeight="50.0" prefWidth="133.0" text="Update List">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <ListView fx:id="cancelBookList" layoutX="100.0" layoutY="98.0" onMouseClicked="#RemoveBookedRoom" prefHeight="400.0" prefWidth="500.0" />
+                              <Button fx:id="CancelBookBtn" layoutX="212.0" layoutY="519.0" mnemonicParsing="false" onAction="#CancelBook" prefHeight="50.0" prefWidth="133.0" text="Cancel Book">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="cancelBookStatusLabel" alignment="CENTER" layoutX="14.0" layoutY="504.0" prefHeight="30.0" prefWidth="317.0" textFill="#d30000">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
    </children>
 </GridPane>
