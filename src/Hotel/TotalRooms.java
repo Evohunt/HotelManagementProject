@@ -124,6 +124,38 @@ public class TotalRooms implements Serializable {
         ser.serialize(this, "rooms.ser");
     }
 
+    public void addExtraCostForRoom(int roomNumber, String roomType, int extraCost) {
+        if (roomType.equals("Reserved")) {
+            for (Room iterator : reservedRooms) {
+                String string = Integer.toString(iterator.getRoomNumber());
+                if (string.equals(Integer.toString(roomNumber))) {
+                    iterator.setExtraCost(iterator.getExtraCost() + extraCost);
+                }
+            }
+        } else if (roomType.equals("Busy")) {
+            for (Room iterator : busyRooms) {
+                String string = Integer.toString(iterator.getRoomNumber());
+                if (string.equals(Integer.toString(roomNumber))) {
+                    iterator.setExtraCost(iterator.getExtraCost() + extraCost);
+                }
+            }
+        }
+    }
+
+    public void checkOutRoom(int roomNumber) {
+        for (Room iterator : busyRooms) {
+            String string;
+            string = Integer.toString(iterator.getRoomNumber());
+            if (string.equals(Integer.toString(roomNumber))) {
+                iterator.reset();
+                freeRooms.add(iterator);
+                busyRooms.remove(iterator);
+                break;
+            }
+        }
+        ser.serialize(this, "rooms.ser");
+    }
+
     public void setReservedRooms(List<Room> reservedRooms) {
         this.reservedRooms = reservedRooms;
     }

@@ -10,7 +10,7 @@ public class Room implements IRoom, Serializable {
     private int roomNumber;
     private int roomSize;
     private Client client;
-    private double roomPrice;
+    private int extraCost = 0;
     private boolean isBusy = false;
     private boolean isReserved = false;
 
@@ -22,7 +22,17 @@ public class Room implements IRoom, Serializable {
 
     public long calculateRoomPrice() {
         long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
-        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS) * 250;
+        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS) * 50 * roomSize;
+    }
+
+    public long calculateTotalDays() {
+        long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
+        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS);
+    }
+
+    public void reset() {
+        this.extraCost = 0;
+        client.reset();
     }
 
     public Room(int roomNumber) {
@@ -69,11 +79,13 @@ public class Room implements IRoom, Serializable {
         isReserved = reserved;
     }
 
-    public double getRoomPrice() {
-        return roomPrice;
+    public int getExtraCost() {
+        return extraCost;
     }
 
-    public void setRoomPrice(double roomPrice) {
-        this.roomPrice = roomPrice;
+    public void setExtraCost(int extraCost) {
+        this.extraCost = extraCost;
     }
+
+
 }

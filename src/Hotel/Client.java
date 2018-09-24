@@ -78,4 +78,13 @@ public class Client implements IClient, Serializable {
         return formatter.format(checkOutDate);
     }
 
+    public void reset() {
+        this.name = "";
+        this.cnp = "";
+        this.phone = "";
+        this.email = "";
+        this.checkInDate = null;
+        this.checkOutDate = null;
+    }
+
 }

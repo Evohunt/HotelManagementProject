@@ -1,5 +1,6 @@
 package Hotel;
 
+import DataSaving.RoomsSerializer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -51,6 +52,24 @@ public class MainController {
     public ListView checkInList;
     public Button checkInSubmitBtn;
 
+    /// Check Out TAB content
+    public ListView checkOutList;
+    public Button checkOutBtn;
+    public Button checkOutUpdateListBtn;
+    public Pane checkOutStatusPanel;
+    public Label checkOutRoomCost;
+    public Label checkOutExtraCost;
+    public Label checkOutTotalCost;
+    public Label checkOutRoomNumber;
+    public Label checkOutRoomSize;
+    public Label checkOutClientName;
+    public Label checkOutCheckInDate;
+    public Label checkOutCheckOutDate;
+    public Label checkOutTotalDays;
+    public Button checkOutStatusBtnClose;
+    public Button btnCheckOutRoom;
+    public Label checkOutSuccessLabel;
+
     /// Check Room TAB content
     public ListView busyRoomsList;
     public ListView reservedRoomsList;
@@ -67,6 +86,8 @@ public class MainController {
     public Label roomStatusClientEmail;
     public Label roomStatusCheckIn;
     public Label roomStatusCheckOut;
+    public TextField roomExtraCost;
+    public Button roomExtraCostAddBtn;
 
     public void bookNow(ActionEvent actionEvent) {
 
@@ -169,6 +190,46 @@ public class MainController {
         }
     }
 
+    public void CheckOutRoom(ActionEvent actionEvent) {
+        if (checkOutList.getSelectionModel().getSelectedIndex() != -1) {
+            checkOutStatusPanel.setVisible(true);
+            for (Room iterator : rooms.getBusyRooms()) {
+                String string = rooms.processRoomNumber(checkOutList.getSelectionModel().getSelectedItems().toString());
+                if (Integer.toString(iterator.getRoomNumber()).equals(string)) {
+                    checkOutRoomNumber.setText(Integer.toString(iterator.getRoomNumber()));
+                    checkOutRoomSize.setText(Integer.toString(iterator.getRoomSize()));
+                    checkOutClientName.setText(iterator.getClient().getName());
+                    checkOutCheckInDate.setText(iterator.getClient().getStringCheckInDate());
+                    checkOutCheckOutDate.setText(iterator.getClient().getStringCheckOutDate());
+                    checkOutTotalDays.setText(Long.toString(iterator.calculateTotalDays()));
+                    checkOutRoomCost.setText(Long.toString(iterator.calculateRoomPrice()));
+                    checkOutExtraCost.setText(Integer.toString(iterator.getExtraCost()));
+                    checkOutTotalCost.setText("RON " + Long.toString(iterator.calculateRoomPrice() + iterator.getExtraCost()));
+                }
+            }
+        }
+    }
+
+    public void CheckOutUpdateList(ActionEvent actionEvent) {
+        checkOutList.getItems().clear();
+        for (Room iterator : rooms.getBusyRooms()) {
+            checkOutList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                    iterator.getClient().getName() + "     -     " +
+                    iterator.getClient().getStringCheckInDate() + "     -     " +
+                    iterator.getClient().getStringCheckOutDate());
+        }
+    }
+
+    public void checkOutClose(ActionEvent actionEvent) {
+        checkOutStatusPanel.setVisible(false);
+        checkOutSuccessLabel.setText("");
+    }
+
+    public void CheckoutAndPay(ActionEvent actionEvent) {
+        rooms.checkOutRoom(Integer.parseInt(checkOutRoomNumber.getText()));
+        checkOutSuccessLabel.setText("Checkout complete!");
+    }
+
     public void CheckRoom(ActionEvent actionEvent) {
         if (busyRoomsList.getSelectionModel().getSelectedIndex() != -1) {
             roomStatusPanel.setVisible(true);
@@ -223,6 +284,13 @@ public class MainController {
                     iterator.getClient().getStringCheckOutDate());
         }
 
+    }
+
+    public void AddExtraCost(ActionEvent actionEvent) {
+        rooms.addExtraCostForRoom(Integer.parseInt(roomStatusRoomNumber.getText()),
+                                  roomStatusRoomStatus.getText(),
+                                  Integer.parseInt(roomExtraCost.getText()));
+        roomExtraCost.setText("");
     }
 
     public void busyRoomsSelect(MouseEvent mouseEvent) {
