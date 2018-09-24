@@ -29,9 +29,9 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="900.0">
          <children>
-            <Pane prefHeight="600.0" prefWidth="201.0" style="-fx-background-color: #190342;">
+            <Pane fx:id="sidebarPane" prefHeight="600.0" prefWidth="201.0" style="-fx-background-color: #643206;">
                <children>
-                  <Label fx:id="btnHome" alignment="CENTER" layoutY="218.0" onMouseClicked="#tabChangeHome" onMouseEntered="#TabChangeHomeHover" onMouseExited="#TabChangeHomeExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="HOME" textFill="#c9c9c9">
+                  <Label fx:id="btnHome" alignment="CENTER" layoutY="218.0" onMouseClicked="#tabChangeHome" onMouseEntered="#TabChangeHomeHover" onMouseExited="#TabChangeHomeExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="HOME" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="32.0" />
                      </font>
@@ -39,7 +39,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="btnBook" alignment="CENTER" layoutY="276.0" onMouseClicked="#tabChangeBook" onMouseEntered="#TabChangeBookHover" onMouseExited="#TabChangeBookExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="BOOK" textFill="#c9c9c9">
+                  <Label fx:id="btnBook" alignment="CENTER" layoutY="276.0" onMouseClicked="#tabChangeBook" onMouseEntered="#TabChangeBookHover" onMouseExited="#TabChangeBookExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="BOOK" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="32.0" />
                      </font>
@@ -47,7 +47,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="btnCheckIn" alignment="CENTER" layoutY="334.0" onMouseClicked="#tabChangeCheckIn" onMouseEntered="#TabChangeCheckInHover" onMouseExited="#TabChangeCheckInExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="CHECK-IN" textFill="#c9c9c9">
+                  <Label fx:id="btnCheckIn" alignment="CENTER" layoutY="334.0" onMouseClicked="#tabChangeCheckIn" onMouseEntered="#TabChangeCheckInHover" onMouseExited="#TabChangeCheckInExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="CHECK-IN" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="32.0" />
                      </font>
@@ -55,7 +55,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="btnCheckOut" alignment="CENTER" layoutY="392.0" onMouseClicked="#tabChangeCheckOut" onMouseEntered="#TabChangeCheckOutHover" onMouseExited="#TabChangeCheckOutExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="CHECK-OUT" textFill="#c9c9c9">
+                  <Label fx:id="btnCheckOut" alignment="CENTER" layoutY="392.0" onMouseClicked="#tabChangeCheckOut" onMouseEntered="#TabChangeCheckOutHover" onMouseExited="#TabChangeCheckOutExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="CHECK-OUT" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="32.0" />
                      </font>
@@ -63,7 +63,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="btnRooms" alignment="CENTER" layoutY="450.0" onMouseClicked="#tabChangeRooms" onMouseEntered="#TabChangeRoomsHover" onMouseExited="#TabChangeRoomsExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="ROOMS" textFill="#c9c9c9">
+                  <Label fx:id="btnRooms" alignment="CENTER" layoutY="450.0" onMouseClicked="#tabChangeRooms" onMouseEntered="#TabChangeRoomsHover" onMouseExited="#TabChangeRoomsExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="ROOMS" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="32.0" />
                      </font>
@@ -71,7 +71,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="btnCancelBook" alignment="CENTER" layoutY="508.0" onMouseClicked="#tabChangeCancelBook" onMouseEntered="#TabChangeCancelBookHover" onMouseExited="#TabChangeCancelBookExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="CANCEL BOOK" textFill="#c9c9c9">
+                  <Label fx:id="btnCancelBook" alignment="CENTER" layoutY="508.0" onMouseClicked="#tabChangeCancelBook" onMouseEntered="#TabChangeCancelBookHover" onMouseExited="#TabChangeCancelBookExit" prefHeight="58.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="CANCEL BOOK" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="32.0" />
                      </font>
@@ -79,7 +79,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="btnExit" alignment="CENTER" layoutX="5.0" layoutY="4.0" onMouseClicked="#ExitApp" onMouseEntered="#btnExitHover" onMouseExited="#btnExitExit" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #350187;" text="EXIT" textFill="#c6c6c6">
+                  <Label fx:id="btnExit" alignment="CENTER" layoutX="5.0" layoutY="4.0" onMouseClicked="#ExitApp" onMouseEntered="#btnExitHover" onMouseExited="#btnExitExit" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #97581d;" text="EXIT" textFill="#c6c6c6">
                      <font>
                         <Font name="American Captain" size="28.0" />
                      </font>
@@ -87,7 +87,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label alignment="CENTER" layoutY="63.0" prefHeight="96.0" prefWidth="201.0" style="-fx-background-color: #28056b;" text="HOTEL MANAGER" textFill="#c9c9c9">
+                  <Label fx:id="sidebarLogo" alignment="CENTER" layoutY="63.0" prefHeight="96.0" prefWidth="201.0" style="-fx-background-color: #97581d;" text="HOTEL MANAGER" textFill="#c9c9c9">
                      <font>
                         <Font name="American Captain" size="33.0" />
                      </font>
@@ -114,6 +114,21 @@
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="66.0" text="Theme">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="btnBlueTheme" layoutX="80.0" layoutY="17.0" onMouseClicked="#ChangeBlueTheme" prefHeight="23.0" prefWidth="23.0" style="-fx-background-color: #28056b;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Label fx:id="btnBrownTheme" layoutX="109.0" layoutY="17.0" onMouseClicked="#ChangeBrownTheme" prefHeight="23.0" prefWidth="23.0" style="-fx-background-color: #97581d;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Label>
                            </children></AnchorPane>
                   </content>

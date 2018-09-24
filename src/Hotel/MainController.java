@@ -1,19 +1,15 @@
 package Hotel;
 
-import DataSaving.RoomsSerializer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class MainController {
 
@@ -30,6 +26,13 @@ public class MainController {
     public RadioButton book_4_beds;
     public Button bookNowBtn;
     private TotalRooms rooms = new TotalRooms();
+
+    /// GUI Theme
+    public Label btnBlueTheme;
+    public Label btnBrownTheme;
+    public Pane sidebarPane;
+    public Label sidebarLogo;
+    private String theme = "Brown";
 
     /// TAB Changer Buttons
     public TabPane mainTabPane;
@@ -315,8 +318,14 @@ public class MainController {
     }
 
     public void TabChangeHomeExit(MouseEvent mouseEvent) {
-        btnHome.setStyle("-fx-border-color: transparent");
-        btnHome.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnHome.setStyle("-fx-border-color: transparent");
+            btnHome.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnHome.setStyle("-fx-border-color: transparent");
+            btnHome.setStyle("-fx-background-color:  #97581d");
+        }
+
     }
 
 
@@ -330,8 +339,13 @@ public class MainController {
     }
 
     public void TabChangeBookExit(MouseEvent mouseEvent) {
-        btnBook.setStyle("-fx-border-color: transparent");
-        btnBook.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnBook.setStyle("-fx-border-color: transparent");
+            btnBook.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnBook.setStyle("-fx-border-color: transparent");
+            btnBook.setStyle("-fx-background-color:  #97581d");
+        }
     }
 
 
@@ -345,8 +359,13 @@ public class MainController {
     }
 
     public void TabChangeCheckInExit(MouseEvent mouseEvent) {
-        btnCheckIn.setStyle("-fx-border-color: transparent");
-        btnCheckIn.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnCheckIn.setStyle("-fx-border-color: transparent");
+            btnCheckIn.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnCheckIn.setStyle("-fx-border-color: transparent");
+            btnCheckIn.setStyle("-fx-background-color:  #97581d");
+        }
     }
 
 
@@ -360,8 +379,13 @@ public class MainController {
     }
 
     public void TabChangeCheckOutExit(MouseEvent mouseEvent) {
-        btnCheckOut.setStyle("-fx-border-color: transparent");
-        btnCheckOut.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnCheckOut.setStyle("-fx-border-color: transparent");
+            btnCheckOut.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnCheckOut.setStyle("-fx-border-color: transparent");
+            btnCheckOut.setStyle("-fx-background-color:  #97581d");
+        }
     }
 
 
@@ -375,8 +399,13 @@ public class MainController {
     }
 
     public void TabChangeRoomsExit(MouseEvent mouseEvent) {
-        btnRooms.setStyle("-fx-border-color: transparent");
-        btnRooms.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnRooms.setStyle("-fx-border-color: transparent");
+            btnRooms.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnRooms.setStyle("-fx-border-color: transparent");
+            btnRooms.setStyle("-fx-background-color:  #97581d");
+        }
     }
 
 
@@ -390,9 +419,15 @@ public class MainController {
     }
 
     public void TabChangeCancelBookExit(MouseEvent mouseEvent) {
-        btnCancelBook.setStyle("-fx-border-color: transparent");
-        btnCancelBook.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnCancelBook.setStyle("-fx-border-color: transparent");
+            btnCancelBook.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnCancelBook.setStyle("-fx-border-color: transparent");
+            btnCancelBook.setStyle("-fx-background-color:  #97581d");
+        }
     }
+
 
     public void ExitApp(MouseEvent mouseEvent) {
         System.exit(0);
@@ -403,8 +438,39 @@ public class MainController {
     }
 
     public void btnExitExit(MouseEvent mouseEvent) {
-        btnExit.setStyle("-fx-border-color: transparent");
-        btnExit.setStyle("-fx-background-color: #28056b");
+        if (theme.equals("Blue")) {
+            btnExit.setStyle("-fx-border-color: transparent");
+            btnExit.setStyle("-fx-background-color: #28056b");
+        } else if (theme.equals("Brown")) {
+            btnExit.setStyle("-fx-border-color: transparent");
+            btnExit.setStyle("-fx-background-color:  #97581d");
+        }
     }
 
+    public void ChangeBlueTheme(MouseEvent mouseEvent) {
+        theme = "Blue";
+        sidebarPane.setStyle("-fx-background-color: #190342");
+        sidebarLogo.setStyle("-fx-background-color: #28056b");
+        btnExit.setStyle("-fx-background-color: #350187");
+        btnHome.setStyle("-fx-background-color: #28056b");
+        btnBook.setStyle("-fx-background-color: #28056b");
+        btnCheckIn.setStyle("-fx-background-color: #28056b");
+        btnCheckOut.setStyle("-fx-background-color: #28056b");
+        btnRooms.setStyle("-fx-background-color: #28056b");
+        btnCancelBook.setStyle("-fx-background-color: #28056b");
+
+    }
+
+    public void ChangeBrownTheme(MouseEvent mouseEvent) {
+        theme = "Brown";
+        sidebarPane.setStyle("-fx-background-color: #643206");
+        sidebarLogo.setStyle("-fx-background-color: #97581d");
+        btnExit.setStyle("-fx-background-color: #97581d");
+        btnHome.setStyle("-fx-background-color: #97581d");
+        btnBook.setStyle("-fx-background-color: #97581d");
+        btnCheckIn.setStyle("-fx-background-color: #97581d");
+        btnCheckOut.setStyle("-fx-background-color: #97581d");
+        btnRooms.setStyle("-fx-background-color: #97581d");
+        btnCancelBook.setStyle("-fx-background-color: #97581d");
+    }
 }
