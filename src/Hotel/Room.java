@@ -9,12 +9,14 @@ public class Room implements IRoom, Serializable {
     private int roomSize;
     private Client client;
     private int extraCost = 0;
+    private long price = 0;
     private boolean isBusy = false;
     private boolean isReserved = false;
 
-    public Room(Client client, int roomSize) {
+    public Room(Client client, int roomSize, Price price) {
         this.client = client;
         this.roomSize = roomSize;
+        this.price = price.calculatePriceForRoom(this);
         isReserved = true;
     }
 
@@ -88,5 +90,11 @@ public class Room implements IRoom, Serializable {
         this.extraCost = extraCost;
     }
 
+    public long getPrice() {
+        return price;
+    }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }

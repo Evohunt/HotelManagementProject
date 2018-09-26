@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hotel.MainController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -129,6 +129,83 @@
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="47.0" layoutY="263.0" prefHeight="35.0" prefWidth="112.0" text="Set prices">
+                                 <font>
+                                    <Font name="Arial Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="65.0" layoutY="306.0" prefHeight="35.0" prefWidth="112.0" text="Summer" textFill="#c33603">
+                                 <font>
+                                    <Font name="Arial Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="65.0" layoutY="344.0" prefHeight="35.0" prefWidth="112.0" text="Spring" textFill="#38b200">
+                                 <font>
+                                    <Font name="Arial Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="65.0" layoutY="382.0" prefHeight="35.0" prefWidth="112.0" text="Autumn" textFill="#804502">
+                                 <font>
+                                    <Font name="Arial Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="65.0" layoutY="420.0" prefHeight="35.0" prefWidth="112.0" text="Winter" textFill="#0098c6">
+                                 <font>
+                                    <Font name="Arial Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="summerPrice" layoutX="177.0" layoutY="306.0" prefHeight="35.0" prefWidth="149.0">
+                                 <font>
+                                    <Font name="Calibri" size="17.0" />
+                                 </font></TextField>
+                              <TextField fx:id="springPrice" layoutX="177.0" layoutY="344.0" prefHeight="35.0" prefWidth="149.0">
+                                 <font>
+                                    <Font name="Calibri" size="17.0" />
+                                 </font></TextField>
+                              <TextField fx:id="autumnPrice" layoutX="177.0" layoutY="382.0" prefHeight="35.0" prefWidth="149.0">
+                                 <font>
+                                    <Font name="Calibri" size="17.0" />
+                                 </font></TextField>
+                              <TextField fx:id="winterPrice" layoutX="177.0" layoutY="420.0" prefHeight="35.0" prefWidth="149.0">
+                                 <font>
+                                    <Font name="Calibri" size="17.0" />
+                                 </font></TextField>
+                              <Button fx:id="pricesConfirmBtn" layoutX="277.0" layoutY="481.0" mnemonicParsing="false" onAction="#AssignPricesForSeasons" prefHeight="43.0" prefWidth="123.0" style="-fx-background-color: green;" text="Set prices" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="17.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="339.0" layoutY="306.0" prefHeight="35.0" prefWidth="149.0" text="/ bed / night">
+                                 <font>
+                                    <Font name="Arial Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="checkPricesBtn" layoutX="277.0" layoutY="530.0" mnemonicParsing="false" onAction="#CheckPrices" prefHeight="43.0" prefWidth="123.0" text="Check prices">
+                                 <font>
+                                    <Font name="Arial Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="339.0" layoutY="344.0" prefHeight="35.0" prefWidth="149.0" text="/ bed / night">
+                                 <font>
+                                    <Font name="Arial Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="339.0" layoutY="382.0" prefHeight="35.0" prefWidth="149.0" text="/ bed / night">
+                                 <font>
+                                    <Font name="Arial Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="339.0" layoutY="420.0" prefHeight="35.0" prefWidth="149.0" text="/ bed / night">
+                                 <font>
+                                    <Font name="Arial Bold" size="23.0" />
+                                 </font>
                               </Label>
                            </children></AnchorPane>
                   </content>

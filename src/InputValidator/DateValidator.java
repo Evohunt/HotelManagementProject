@@ -4,6 +4,7 @@ import javafx.scene.control.DatePicker;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class DateValidator implements IDateValidator {
     @Override
@@ -24,5 +25,11 @@ public class DateValidator implements IDateValidator {
     public String convertDateToString(Date date) {
         Format formatter = new SimpleDateFormat("yyyy/MM/dd");
         return formatter.format(date);
+    }
+
+    @Override
+    public long calculateNumberFromDateInterval(Date checkInDate, Date checkOutDate) {
+        long differenceInMillies = checkOutDate.getTime() - checkInDate.getTime();
+        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS);
     }
 }

@@ -9,5 +9,6 @@ public interface IDateValidator {
     Date convertToDate(DatePicker datepicker);
     boolean isDateIntervalValid(Date checkInDate, Date checkOutDate);
     String convertDateToString(Date date);
+    long calculateNumberFromDateInterval(Date checkInDate, Date checkOutDate);
 
 }

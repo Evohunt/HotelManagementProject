@@ -1,5 +1,7 @@
-package Hotel;
+package Controllers;
 
+import DataSaving.PricesSerializer;
+import Hotel.*;
 import InputValidator.DateValidator;
 import InputValidator.IDateValidator;
 import InputValidator.IInputValidation;
@@ -16,6 +18,14 @@ import java.awt.*;
 
 public class MainController {
 
+    /// Home TAB content
+    public TextField summerPrice;
+    public TextField springPrice;
+    public TextField autumnPrice;
+    public TextField winterPrice;
+    public Button pricesConfirmBtn;
+    public Button checkPricesBtn;
+
     /// Book TAB content
     public TextField book_name;
     public TextField book_cnp;
@@ -31,6 +41,7 @@ public class MainController {
     private TotalRooms rooms = new TotalRooms();
     private IInputValidation inputValidator = new InputValidation();
     private IDateValidator dateValidator = new DateValidator();
+    private Price price = new Price();
 
     /// GUI Theme
     public Label btnBlueTheme;
@@ -123,7 +134,7 @@ public class MainController {
                 if (desiredRoomSize != 0) {
                     if (dateValidator.isDateIntervalValid(dateValidator.convertToDate(book_check_in), dateValidator.convertToDate(book_check_out))) {
                         if (rooms.areFreeRoomsAvailable(desiredRoomSize)) {
-                            rooms.addReservedRoom(new Room(client, desiredRoomSize), desiredRoomSize);
+                            rooms.addReservedRoom(new Room(client, desiredRoomSize, price), desiredRoomSize);
                             JOptionPane.showMessageDialog(new Frame(), "Room booked successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
                             book_name.setText("");
                             book_cnp.setText("");
@@ -221,9 +232,9 @@ public class MainController {
                     checkOutCheckInDate.setText(iterator.getClient().getStringCheckInDate());
                     checkOutCheckOutDate.setText(iterator.getClient().getStringCheckOutDate());
                     checkOutTotalDays.setText(Long.toString(iterator.calculateTotalDays()));
-                    checkOutRoomCost.setText(Long.toString(iterator.calculateRoomPrice()));
+                    checkOutRoomCost.setText(Long.toString(iterator.getPrice()));
                     checkOutExtraCost.setText(Integer.toString(iterator.getExtraCost()));
-                    checkOutTotalCost.setText("RON " + Long.toString(iterator.calculateRoomPrice() + iterator.getExtraCost()));
+                    checkOutTotalCost.setText("RON " + Long.toString(iterator.getPrice() + iterator.getExtraCost()));
                 }
             }
         }
@@ -316,6 +327,7 @@ public class MainController {
         rooms.addExtraCostForRoom(Integer.parseInt(roomStatusRoomNumber.getText()),
                                   roomStatusRoomStatus.getText(),
                                   Integer.parseInt(roomExtraCost.getText()));
+        JOptionPane.showMessageDialog(new Frame(), "Added RON " + roomExtraCost.getText() + " to extra expenses!", "Information", JOptionPane.INFORMATION_MESSAGE);
         roomExtraCost.setText("");
     }
 
@@ -496,4 +508,28 @@ public class MainController {
         btnCancelBook.setStyle("-fx-background-color: #97581d");
     }
 
+    public void AssignPricesForSeasons(ActionEvent actionEvent) {
+        if (summerPrice.getText().equals("") || springPrice.getText().equals("") || autumnPrice.getText().equals("") || winterPrice.getText().equals("")) {
+            JOptionPane.showMessageDialog(new Frame(), "Please enter prices in all fields!", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            PricesSerializer ser = new PricesSerializer();
+            price.setSummerPrice(Integer.parseInt(summerPrice.getText()));
+            price.setSpringPrice(Integer.parseInt(springPrice.getText()));
+            price.setAutumnPrice(Integer.parseInt(autumnPrice.getText()));
+            price.setWinterPrice(Integer.parseInt(winterPrice.getText()));
+            JOptionPane.showMessageDialog(new Frame(), "Prices updated successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            summerPrice.setText("");
+            springPrice.setText("");
+            autumnPrice.setText("");
+            winterPrice.setText("");
+            ser.serialize(price, "prices.ser");
+        }
+    }
+
+    public void CheckPrices(ActionEvent actionEvent) {
+        summerPrice.setText(Integer.toString(price.getSummerPrice()));
+        springPrice.setText(Integer.toString(price.getSpringPrice()));
+        autumnPrice.setText(Integer.toString(price.getAutumnPrice()));
+        winterPrice.setText(Integer.toString(price.getWinterPrice()));
+    }
 }

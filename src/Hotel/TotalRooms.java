@@ -10,7 +10,7 @@ public class TotalRooms implements ITotalRooms, Serializable {
 
     private List<Room> busyRooms = new ArrayList<>();
     private List<Room> reservedRooms = new ArrayList<>();
-    private List<Room> freeRooms = new ArrayList<Room>();
+    private List<Room> freeRooms = new ArrayList<>();
     private RoomsSerializer ser = new RoomsSerializer();
 
     public TotalRooms() {
