@@ -100,17 +100,17 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="652.0" prefWidth="700.0" style="-fx-background-color: white;">
                            <children>
-                              <Label alignment="CENTER" layoutX="139.0" layoutY="189.0" prefHeight="135.0" prefWidth="422.0" text="Paxxton Hotel" textFill="#97581d">
+                              <Label alignment="CENTER" layoutX="132.0" layoutY="51.0" prefHeight="135.0" prefWidth="422.0" text="Paxxton Hotel" textFill="#97581d">
                                  <font>
                                     <Font name="Verdana" size="51.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="81.0" fitWidth="80.0" layoutX="216.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="81.0" fitWidth="80.0" layoutX="209.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Media/mikew.gif" />
                                  </image>
                               </ImageView>
-                              <Label alignment="CENTER" layoutX="432.0" layoutY="287.0" prefHeight="22.0" prefWidth="178.0" text="Managing Application">
+                              <Label alignment="CENTER" layoutX="425.0" layoutY="149.0" prefHeight="22.0" prefWidth="178.0" text="Managing Application">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
@@ -569,7 +569,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <ListView fx:id="cancelBookList" layoutX="100.0" layoutY="98.0" onMouseClicked="#RemoveBookedRoom" prefHeight="400.0" prefWidth="500.0" />
+                              <ListView fx:id="cancelBookList" layoutX="100.0" layoutY="98.0" prefHeight="400.0" prefWidth="500.0" />
                               <Button fx:id="CancelBookBtn" layoutX="212.0" layoutY="519.0" mnemonicParsing="false" onAction="#CancelBook" prefHeight="50.0" prefWidth="133.0" text="Cancel Book">
                                  <font>
                                     <Font name="Arial Bold" size="17.0" />

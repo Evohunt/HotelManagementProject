@@ -1,10 +1,8 @@
 package Hotel;
 
+import InputValidator.DateValidator;
 import javafx.scene.control.DatePicker;
-
 import java.io.Serializable;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client implements IClient, Serializable {
@@ -15,6 +13,31 @@ public class Client implements IClient, Serializable {
     private String email;
     private Date checkInDate;
     private Date checkOutDate;
+
+    public void setCheckInDate(DatePicker checkInDate) {
+        this.checkInDate = new DateValidator().convertToDate(checkInDate);
+    }
+
+    public void setCheckOutDate(DatePicker checkOutDate) {
+        this.checkOutDate = new DateValidator().convertToDate(checkOutDate);
+    }
+
+    public String getStringCheckInDate() {
+        return new DateValidator().convertDateToString(checkInDate);
+    }
+
+    public String getStringCheckOutDate() {
+        return new DateValidator().convertDateToString(checkOutDate);
+    }
+
+    public void reset() {
+        this.name = "";
+        this.cnp = "";
+        this.phone = "";
+        this.email = "";
+        this.checkInDate = null;
+        this.checkOutDate = null;
+    }
 
     public String getName() {
         return name;
@@ -52,39 +75,8 @@ public class Client implements IClient, Serializable {
         return checkInDate;
     }
 
-    public void setCheckInDate(DatePicker checkInDate) {
-        java.sql.Date sqlDate = java.sql.Date.valueOf(checkInDate.getValue());
-        Date date = new Date(sqlDate.getTime());
-        this.checkInDate = date;
-    }
-
     public Date getCheckOutDate() {
         return checkOutDate;
-    }
-
-    public void setCheckOutDate(DatePicker checkOutDate) {
-        java.sql.Date sqlDate = java.sql.Date.valueOf(checkOutDate.getValue());
-        Date date = new Date(sqlDate.getTime());
-        this.checkOutDate = date;
-    }
-
-    public String getStringCheckInDate() {
-        Format formatter = new SimpleDateFormat("yyyy/MM/dd");
-        return formatter.format(checkInDate);
-    }
-
-    public String getStringCheckOutDate() {
-        Format formatter = new SimpleDateFormat("yyyy/MM/dd");
-        return formatter.format(checkOutDate);
-    }
-
-    public void reset() {
-        this.name = "";
-        this.cnp = "";
-        this.phone = "";
-        this.email = "";
-        this.checkInDate = null;
-        this.checkOutDate = null;
     }
 
 }

@@ -1,8 +1,6 @@
 package Hotel;
 
 import java.io.Serializable;
-import java.sql.Time;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Room implements IRoom, Serializable {

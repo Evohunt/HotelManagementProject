@@ -2,8 +2,7 @@ package Hotel;
 
 import DataSaving.RoomsSerializer;
 
-import java.io.File;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,32 +10,34 @@ public class TotalRooms implements ITotalRooms, Serializable {
 
     private List<Room> busyRooms = new ArrayList<>();
     private List<Room> reservedRooms = new ArrayList<>();
-    private List<Room> freeRooms = new ArrayList<Room>() {{
-        add(new Room(201));
-        add(new Room(202));
-        add(new Room(203));
-        add(new Room(204));
-        add(new Room(205));
-        add(new Room(301));
-        add(new Room(302));
-        add(new Room(303));
-        add(new Room(304));
-        add(new Room(305));
-        add(new Room(401));
-        //add(new Room(402));
-        //add(new Room(403));
-    }};
+    private List<Room> freeRooms = new ArrayList<Room>();
     private RoomsSerializer ser = new RoomsSerializer();
 
     public TotalRooms() {
 
-        File f = new File("rooms.ser");
-        if(f.exists() && !f.isDirectory()) {
+        File serFile = new File("rooms.ser");
+        File configFile = new File("rooms.cfg");
+        if(serFile.exists() && !serFile.isDirectory()) {
             this.reservedRooms = ser.deserialize("rooms.ser").getReservedRooms();
             this.freeRooms = ser.deserialize("rooms.ser").getFreeRooms();
             this.busyRooms = ser.deserialize("rooms.ser").getBusyRooms();
+        } else if (configFile.exists() && !configFile.isDirectory()) {
+            configRoomsFromFile("rooms.cfg");
         }
 
+    }
+
+    @Override
+    public void configRoomsFromFile(String path) {
+        File file = new File(path);
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String roomNumber;
+            while ((roomNumber = reader.readLine()) != null) {
+                freeRooms.add(new Room(Integer.parseInt(roomNumber)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

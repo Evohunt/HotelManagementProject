@@ -1,5 +1,7 @@
 package Hotel;
 
+import InputValidator.DateValidator;
+import InputValidator.IDateValidator;
 import InputValidator.IInputValidation;
 import InputValidator.InputValidation;
 import javafx.event.ActionEvent;
@@ -9,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -29,6 +30,7 @@ public class MainController {
     public Button bookNowBtn;
     private TotalRooms rooms = new TotalRooms();
     private IInputValidation inputValidator = new InputValidation();
+    private IDateValidator dateValidator = new DateValidator();
 
     /// GUI Theme
     public Label btnBlueTheme;
@@ -116,25 +118,32 @@ public class MainController {
             }
 
             if (inputValidator.onlyContainsNumbers(book_phone.getText(), book_cnp.getText()) &&
-                    inputValidator.onlyContainsLetters(book_name.getText(), book_email.getText())) {
+                    inputValidator.onlyContainsLetters(book_name.getText())) {
 
-                if (rooms.areFreeRoomsAvailable(desiredRoomSize)) {
-                    rooms.addReservedRoom(new Room(client, desiredRoomSize), desiredRoomSize);
-                    JOptionPane.showMessageDialog(new Frame(), "Room booked successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
-                    book_name.setText("");
-                    book_cnp.setText("");
-                    book_email.setText("");
-                    book_phone.setText("");
-                    book_2_beds.setSelected(false);
-                    book_3_beds.setSelected(false);
-                    book_4_beds.setSelected(false);
-                    book_check_in.getEditor().clear();
-                    book_check_out.getEditor().clear();
+                if (desiredRoomSize != 0) {
+                    if (dateValidator.isDateIntervalValid(dateValidator.convertToDate(book_check_in), dateValidator.convertToDate(book_check_out))) {
+                        if (rooms.areFreeRoomsAvailable(desiredRoomSize)) {
+                            rooms.addReservedRoom(new Room(client, desiredRoomSize), desiredRoomSize);
+                            JOptionPane.showMessageDialog(new Frame(), "Room booked successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
+                            book_name.setText("");
+                            book_cnp.setText("");
+                            book_email.setText("");
+                            book_phone.setText("");
+                            book_2_beds.setSelected(false);
+                            book_3_beds.setSelected(false);
+                            book_4_beds.setSelected(false);
+                            book_check_in.getEditor().clear();
+                            book_check_out.getEditor().clear();
+                        }
+                        else {
+                            JOptionPane.showMessageDialog(new Frame(), "No more rooms with " + desiredRoomSize + " beds available!", "Warning", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(new Frame(), "Date interval is not valid", "Warning", JOptionPane.WARNING_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(new Frame(), "Please select a room size", "Warning", JOptionPane.WARNING_MESSAGE);
                 }
-                else {
-                    JOptionPane.showMessageDialog(new Frame(), "No more rooms with " + desiredRoomSize + " beds available!", "Warning", JOptionPane.WARNING_MESSAGE);
-                }
-
             } else {
                 JOptionPane.showMessageDialog(new Frame(), "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
             }
@@ -155,10 +164,6 @@ public class MainController {
         }
     }
 
-    public void RemoveBookedRoom(MouseEvent mouseEvent) {
-        //book_name.setText(cancelBookList.getSelectionModel().getSelectedItems().toString());
-    }
-
     public void CancelBook(ActionEvent actionEvent) {
         if (cancelBookList.getSelectionModel().getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(new Frame(), "Please select a room first!", "Warning", JOptionPane.INFORMATION_MESSAGE);
@@ -171,6 +176,7 @@ public class MainController {
                         iterator.getClient().getStringCheckInDate() + "     -     " +
                         iterator.getClient().getStringCheckOutDate());
             }
+            JOptionPane.showMessageDialog(new Frame(), "Book canceled successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -236,6 +242,13 @@ public class MainController {
     public void checkOutClose(ActionEvent actionEvent) {
         checkOutStatusPanel.setVisible(false);
         checkOutSuccessLabel.setText("");
+        checkOutList.getItems().clear();
+        for (Room iterator : rooms.getBusyRooms()) {
+            checkOutList.getItems().add(iterator.getRoomNumber() + "     -     " +
+                    iterator.getClient().getName() + "     -     " +
+                    iterator.getClient().getStringCheckInDate() + "     -     " +
+                    iterator.getClient().getStringCheckOutDate());
+        }
     }
 
     public void CheckoutAndPay(ActionEvent actionEvent) {
@@ -482,4 +495,5 @@ public class MainController {
         btnRooms.setStyle("-fx-background-color: #97581d");
         btnCancelBook.setStyle("-fx-background-color: #97581d");
     }
+
 }

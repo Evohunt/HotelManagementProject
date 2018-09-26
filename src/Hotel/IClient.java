@@ -9,4 +9,5 @@ public interface IClient {
     String getStringCheckInDate();
     String getStringCheckOutDate();
     void reset();
+
 }

@@ -1,9 +1,6 @@
 package InputValidator;
 
-import java.util.regex.Pattern;
-
 public class InputValidation implements IInputValidation {
-
 
     @Override
     public boolean onlyContainsNumbers(String... args) {
@@ -18,10 +15,11 @@ public class InputValidation implements IInputValidation {
     @Override
     public boolean onlyContainsLetters(String... args) {
         for (String iterator : args) {
-            if (!iterator.matches("[a-zA-Z]+") || iterator.length() <= 0) {
+            if (!iterator.matches("[a-zA-Z ]+") || iterator.length() <= 0) {
                 return false;
             }
         }
         return true;
     }
+    
 }

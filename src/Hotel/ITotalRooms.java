@@ -1,6 +1,8 @@
 package Hotel;
 
 public interface ITotalRooms {
+
+    void configRoomsFromFile(String path);
     boolean areFreeRoomsAvailable(int roomSize);
     void assignRoomNumber(Room room, int roomSize);
     void removeFreeRoomWithNumber(int roomNumber);
@@ -10,4 +12,5 @@ public interface ITotalRooms {
     void moveRoomFromReservedToBusy(int roomNumber);
     void addExtraCostForRoom(int roomNumber, String roomType, int extraCost);
     void checkOutRoom(int roomNumber);
+
 }
