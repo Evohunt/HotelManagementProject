@@ -2,7 +2,6 @@ package Hotel;
 
 import DataSaving.PricesSerializer;
 import InputValidator.DateValidator;
-
 import java.io.File;
 import java.io.Serializable;
 

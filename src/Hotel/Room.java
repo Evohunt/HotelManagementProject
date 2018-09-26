@@ -1,7 +1,7 @@
 package Hotel;
 
+import InputValidator.DateValidator;
 import java.io.Serializable;
-import java.util.concurrent.TimeUnit;
 
 public class Room implements IRoom, Serializable {
 
@@ -21,15 +21,8 @@ public class Room implements IRoom, Serializable {
     }
 
     @Override
-    public long calculateRoomPrice() {
-        long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
-        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS) * 50 * roomSize;
-    }
-
-    @Override
     public long calculateTotalDays() {
-        long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
-        return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS);
+        return new DateValidator().calculateNumberFromDateInterval(client.getCheckOutDate(), client.getCheckInDate());
     }
 
     @Override

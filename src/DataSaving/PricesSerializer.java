@@ -1,8 +1,6 @@
 package DataSaving;
 
 import Hotel.Price;
-import Hotel.TotalRooms;
-
 import java.io.*;
 
 public class PricesSerializer implements IPricesSerializer {
