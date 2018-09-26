@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TotalRooms implements Serializable {
+public class TotalRooms implements ITotalRooms, Serializable {
 
     private List<Room> busyRooms = new ArrayList<>();
     private List<Room> reservedRooms = new ArrayList<>();
@@ -39,6 +39,7 @@ public class TotalRooms implements Serializable {
 
     }
 
+    @Override
     public boolean areFreeRoomsAvailable(int roomSize) {
         if (this.freeRooms.size() != 0) {
             for (Room iterator : freeRooms) {
@@ -53,6 +54,7 @@ public class TotalRooms implements Serializable {
         return false;
     }
 
+    @Override
     public void assignRoomNumber(Room room, int roomSize) {
         for (Room iterator : freeRooms) {
             String string = Integer.toString(iterator.getRoomNumber());
@@ -63,6 +65,7 @@ public class TotalRooms implements Serializable {
         }
     }
 
+    @Override
     public void removeFreeRoomWithNumber(int roomNumber) {
         for (Room iterator : freeRooms) {
             String string = Integer.toString(iterator.getRoomNumber());
@@ -73,11 +76,7 @@ public class TotalRooms implements Serializable {
         }
     }
 
-    public void addReservedRoom(Room room) {
-        this.reservedRooms.add(room);
-        ser.serialize(this, "rooms.ser");
-    }
-
+    @Override
     public void addReservedRoom(Room room, int roomSize) {
         assignRoomNumber(room, roomSize);
         removeFreeRoomWithNumber(room.getRoomNumber());
@@ -85,10 +84,12 @@ public class TotalRooms implements Serializable {
         ser.serialize(this, "rooms.ser");
     }
 
+    @Override
     public String processRoomNumber(String string) {
         return string.substring(1, 4);
     }
 
+    @Override
     public void cancelReservedRoom(int roomNumber) {
         for (Room iterator : reservedRooms) {
             String string = Integer.toString(iterator.getRoomNumber());
@@ -101,16 +102,7 @@ public class TotalRooms implements Serializable {
         ser.serialize(this, "rooms.ser");
     }
 
-    public boolean hasClientReservedRoom(String name) {
-        for (Room iterator : reservedRooms) {
-            String string = iterator.getClient().getName();
-            if (string.equals(name)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
+    @Override
     public void moveRoomFromReservedToBusy(int roomNumber) {
         for (Room iterator : reservedRooms) {
             String string;
@@ -124,6 +116,7 @@ public class TotalRooms implements Serializable {
         ser.serialize(this, "rooms.ser");
     }
 
+    @Override
     public void addExtraCostForRoom(int roomNumber, String roomType, int extraCost) {
         if (roomType.equals("Reserved")) {
             for (Room iterator : reservedRooms) {
@@ -142,6 +135,7 @@ public class TotalRooms implements Serializable {
         }
     }
 
+    @Override
     public void checkOutRoom(int roomNumber) {
         for (Room iterator : busyRooms) {
             String string;

@@ -20,16 +20,19 @@ public class Room implements IRoom, Serializable {
         isReserved = true;
     }
 
+    @Override
     public long calculateRoomPrice() {
         long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
         return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS) * 50 * roomSize;
     }
 
+    @Override
     public long calculateTotalDays() {
         long differenceInMillies = client.getCheckOutDate().getTime() - client.getCheckInDate().getTime();
         return TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS);
     }
 
+    @Override
     public void reset() {
         this.extraCost = 0;
         client.reset();

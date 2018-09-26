@@ -63,52 +63,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hotel/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hotel/Main.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hotel/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="170">
+              <caret line="121" column="94" lean-forward="true" selection-start-line="121" selection-start-column="94" selection-end-line="121" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13656#13657#0" expanded="true" />
-                <element signature="e#13720#13721#0" expanded="true" />
-                <element signature="e#13782#13783#0" expanded="true" />
-                <element signature="e#13842#13843#0" expanded="true" />
-                <element signature="e#13902#13903#0" expanded="true" />
-                <element signature="e#13951#13952#0" expanded="true" />
-                <element signature="e#14007#14008#0" expanded="true" />
-                <element signature="e#14064#14065#0" expanded="true" />
-                <element signature="e#14125#14126#0" expanded="true" />
-                <element signature="e#14184#14185#0" expanded="true" />
-                <element signature="e#14191#14369#0" />
-                <element signature="e#14610#14788#0" />
-                <element signature="e#15038#15225#0" />
-                <element signature="e#15478#15668#0" />
-                <element signature="e#15912#16093#0" />
-                <element signature="e#16352#16548#0" />
-                <element signature="e#16748#16920#0" />
-                <element signature="e#17139#17230#0" />
-                <element signature="e#17362#17505#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputValidation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/InputValidator/InputValidation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IInputValidation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/InputValidator/IInputValidation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -116,8 +96,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hotel/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+            <state relative-caret-position="850">
+              <caret line="70" column="40" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,8 +108,8 @@
       <file leaf-file-name="IClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hotel/IClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="153">
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -137,8 +117,31 @@
       <file leaf-file-name="IRoom.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hotel/IRoom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="85">
+              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Room.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="41" column="37" lean-forward="true" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1166#1167#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ITotalRooms.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Hotel/ITotalRooms.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -146,20 +149,11 @@
       <file leaf-file-name="TotalRooms.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hotel/TotalRooms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="150" column="40" selection-start-line="150" selection-start-column="40" selection-end-line="150" selection-end-column="40" />
+            <state relative-caret-position="102">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRoomsSerializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataSaving/IRoomsSerializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -167,20 +161,8 @@
       <file leaf-file-name="RoomsSerializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataSaving/RoomsSerializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="97" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
+            <state relative-caret-position="153">
+              <caret line="11" column="66" lean-forward="true" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,8 +175,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -214,11 +196,16 @@
         <option value="$PROJECT_DIR$/src/DataSaving/RoomsSerializer.java" />
         <option value="$PROJECT_DIR$/src/DataSaving/IRoomsSerializer.java" />
         <option value="$PROJECT_DIR$/src/Hotel/Client.java" />
-        <option value="$PROJECT_DIR$/src/Hotel/TotalRooms.java" />
-        <option value="$PROJECT_DIR$/src/Hotel/Room.java" />
         <option value="$PROJECT_DIR$/src/Hotel/Main.fxml" />
         <option value="$PROJECT_DIR$/src/Hotel/Main.java" />
+        <option value="$PROJECT_DIR$/src/Hotel/IClient.java" />
+        <option value="$PROJECT_DIR$/src/Hotel/IRoom.java" />
+        <option value="$PROJECT_DIR$/src/Hotel/ITotalRooms.java" />
+        <option value="$PROJECT_DIR$/src/Hotel/Room.java" />
+        <option value="$PROJECT_DIR$/src/InputValidator/IInputValidation.java" />
+        <option value="$PROJECT_DIR$/src/InputValidator/InputValidation.java" />
         <option value="$PROJECT_DIR$/src/Hotel/MainController.java" />
+        <option value="$PROJECT_DIR$/src/Hotel/TotalRooms.java" />
       </list>
     </option>
   </component>
@@ -232,7 +219,7 @@
     <packageJsonPaths />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -247,9 +234,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,10 +248,29 @@
               <item name="HotelManagementProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HotelManagementProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagementProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DataSaving" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagementProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagementProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Hotel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagementProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagementProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="InputValidator" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,14 +393,16 @@
       <workItem from="1537794408462" duration="11280000" />
       <workItem from="1537807028084" duration="4069000" />
       <workItem from="1537819895054" duration="5400000" />
+      <workItem from="1537961873009" duration="4639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52507000" />
+    <option name="totallyTimeSpent" value="57146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="TODO" order="8" />
@@ -403,17 +410,16 @@
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021962" side_tool="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50292826" side_tool="true" weight="0.3290938" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4978038" weight="0.3290938" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49707174" visible="true" weight="0.3290938" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.6703755" visible="true" weight="0.18155198" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.6703755" visible="true" weight="0.18155198" />
       <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3290938" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
@@ -423,6 +429,7 @@
       <window_info anchor="right" id="JetGradle" order="9" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3290938" />
       <window_info anchor="bottom" id="Changes" order="9" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Profiler" order="12" />
@@ -467,42 +474,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Hotel/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="179" column="57" lean-forward="true" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="75" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Hotel/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
@@ -560,6 +531,8 @@
           <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1166#1167#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,25 +543,6 @@
           <caret line="130" column="127" lean-forward="true" selection-start-line="130" selection-start-column="127" selection-end-line="130" selection-end-column="127" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
           </folding>
         </state>
       </provider>
@@ -606,25 +560,6 @@
           <caret line="43" column="63" lean-forward="true" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
           </folding>
         </state>
       </provider>
@@ -700,25 +635,6 @@
           <caret line="48" column="71" lean-forward="true" selection-start-line="48" selection-start-column="71" selection-end-line="48" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
           </folding>
         </state>
       </provider>
@@ -838,25 +754,6 @@
           <caret line="43" column="50" lean-forward="true" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
           </folding>
         </state>
       </provider>
@@ -874,25 +771,6 @@
           <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
           </folding>
         </state>
       </provider>
@@ -918,23 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/IClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataSaving/RoomsSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Throwable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -949,10 +810,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotel/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotel/IClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotel/IRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotel/ITotalRooms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataSaving/RoomsSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="66" lean-forward="true" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputValidator/IInputValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputValidator/InputValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Hotel/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+        <state relative-caret-position="850">
+          <caret line="70" column="40" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotel/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="121" column="94" lean-forward="true" selection-start-line="121" selection-start-column="94" selection-end-line="121" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -961,8 +884,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hotel/TotalRooms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2431">
-          <caret line="150" column="40" selection-start-line="150" selection-start-column="40" selection-end-line="150" selection-end-column="40" />
+        <state relative-caret-position="102">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -971,61 +894,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hotel/Room.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="97" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
+        <state relative-caret-position="294">
+          <caret line="41" column="37" lean-forward="true" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/IRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/Main.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotel/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13656#13657#0" expanded="true" />
-            <element signature="e#13720#13721#0" expanded="true" />
-            <element signature="e#13782#13783#0" expanded="true" />
-            <element signature="e#13842#13843#0" expanded="true" />
-            <element signature="e#13902#13903#0" expanded="true" />
-            <element signature="e#13951#13952#0" expanded="true" />
-            <element signature="e#14007#14008#0" expanded="true" />
-            <element signature="e#14064#14065#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14191#14369#0" />
-            <element signature="e#14610#14788#0" />
-            <element signature="e#15038#15225#0" />
-            <element signature="e#15478#15668#0" />
-            <element signature="e#15912#16093#0" />
-            <element signature="e#16352#16548#0" />
-            <element signature="e#16748#16920#0" />
-            <element signature="e#17139#17230#0" />
-            <element signature="e#17362#17505#0" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1166#1167#0" expanded="true" />
           </folding>
         </state>
       </provider>

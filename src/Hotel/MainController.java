@@ -1,5 +1,7 @@
 package Hotel;
 
+import InputValidator.IInputValidation;
+import InputValidator.InputValidation;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -26,6 +28,7 @@ public class MainController {
     public RadioButton book_4_beds;
     public Button bookNowBtn;
     private TotalRooms rooms = new TotalRooms();
+    private IInputValidation inputValidator = new InputValidation();
 
     /// GUI Theme
     public Label btnBlueTheme;
@@ -112,23 +115,29 @@ public class MainController {
                 desiredRoomSize = 4;
             }
 
-            if (rooms.areFreeRoomsAvailable(desiredRoomSize)) {
-                rooms.addReservedRoom(new Room(client, desiredRoomSize), desiredRoomSize);
-                JOptionPane.showMessageDialog(new Frame(), "Room booked successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
-            }
-            else {
-                JOptionPane.showMessageDialog(new Frame(), "No more rooms with " + desiredRoomSize + " beds available!", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
+            if (inputValidator.onlyContainsNumbers(book_phone.getText(), book_cnp.getText()) &&
+                    inputValidator.onlyContainsLetters(book_name.getText(), book_email.getText())) {
 
-            book_name.setText("");
-            book_cnp.setText("");
-            book_email.setText("");
-            book_phone.setText("");
-            book_2_beds.setSelected(false);
-            book_3_beds.setSelected(false);
-            book_4_beds.setSelected(false);
-            book_check_in.getEditor().clear();
-            book_check_out.getEditor().clear();
+                if (rooms.areFreeRoomsAvailable(desiredRoomSize)) {
+                    rooms.addReservedRoom(new Room(client, desiredRoomSize), desiredRoomSize);
+                    JOptionPane.showMessageDialog(new Frame(), "Room booked successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    book_name.setText("");
+                    book_cnp.setText("");
+                    book_email.setText("");
+                    book_phone.setText("");
+                    book_2_beds.setSelected(false);
+                    book_3_beds.setSelected(false);
+                    book_4_beds.setSelected(false);
+                    book_check_in.getEditor().clear();
+                    book_check_out.getEditor().clear();
+                }
+                else {
+                    JOptionPane.showMessageDialog(new Frame(), "No more rooms with " + desiredRoomSize + " beds available!", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(new Frame(), "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
