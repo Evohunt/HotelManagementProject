@@ -30,12 +30,16 @@ public class TotalRooms implements ITotalRooms, Serializable {
     public void configRoomsFromFile(String path) {
         File file = new File(path);
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String roomNumber;
-            while ((roomNumber = reader.readLine()) != null) {
-                freeRooms.add(new Room(Integer.parseInt(roomNumber)));
-            }
+            addRoomsFromReader(reader);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void addRoomsFromReader(BufferedReader reader) throws IOException {
+        String roomNumber;
+        while ((roomNumber = reader.readLine()) != null) {
+            freeRooms.add(new Room(Integer.parseInt(roomNumber)));
         }
     }
 

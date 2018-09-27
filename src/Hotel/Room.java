@@ -22,7 +22,7 @@ public class Room implements IRoom, Serializable {
 
     @Override
     public long calculateTotalDays() {
-        return new DateValidator().calculateNumberFromDateInterval(client.getCheckOutDate(), client.getCheckInDate());
+        return new DateValidator().calculateNumberFromDateInterval(client.getCheckInDate(), client.getCheckOutDate());
     }
 
     @Override
