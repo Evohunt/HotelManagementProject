@@ -259,7 +259,7 @@
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <RadioButton fx:id="book_2_beds" layoutX="296.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="2 beds">
+                              <RadioButton fx:id="book_2_beds" layoutX="377.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="2 beds">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="roomSize" />
                                  </toggleGroup>
@@ -267,12 +267,12 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton fx:id="book_3_beds" layoutX="376.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="3 beds" toggleGroup="$roomSize">
+                              <RadioButton fx:id="book_3_beds" layoutX="457.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="3 beds" toggleGroup="$roomSize">
                                  <font>
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton fx:id="book_4_beds" layoutX="456.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="4 beds" toggleGroup="$roomSize">
+                              <RadioButton fx:id="book_4_beds" layoutX="537.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="4 beds" toggleGroup="$roomSize">
                                  <font>
                                     <Font name="Arial" size="15.0" />
                                  </font>
@@ -297,6 +297,11 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
+                              <RadioButton fx:id="book_1_bed" layoutX="296.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="1 bed" toggleGroup="$roomSize">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </RadioButton>
                            </children>
                         </AnchorPane>
                   </content>

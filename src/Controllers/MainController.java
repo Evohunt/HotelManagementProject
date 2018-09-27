@@ -34,6 +34,7 @@ public class MainController {
     public ToggleGroup roomSize;
     public DatePicker book_check_in;
     public DatePicker book_check_out;
+    public RadioButton book_1_bed;
     public RadioButton book_2_beds;
     public RadioButton book_3_beds;
     public RadioButton book_4_beds;
@@ -120,7 +121,9 @@ public class MainController {
             client.setCheckInDate(book_check_in);
             client.setCheckOutDate(book_check_out);
             int desiredRoomSize = 0;
-            if (book_2_beds.isSelected()) {
+            if (book_1_bed.isSelected()) {
+                desiredRoomSize = 1;
+            } else if (book_2_beds.isSelected()) {
                 desiredRoomSize = 2;
             } else if (book_3_beds.isSelected()) {
                 desiredRoomSize = 3;
