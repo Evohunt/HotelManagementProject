@@ -12,19 +12,21 @@ public class TotalRooms implements ITotalRooms, Serializable {
     private List<Room> freeRooms = new ArrayList<>();
     private RoomsSerializer ser = new RoomsSerializer();
 
-    public TotalRooms() {
+    public TotalRooms(String roomsFilePath, String hotelConfigurationPath) {
 
-        File serFile = new File("rooms.ser");
-        File configFile = new File("rooms.cfg");
+        File serFile = new File(roomsFilePath);
+        File configFile = new File(hotelConfigurationPath);
         if(serFile.exists() && !serFile.isDirectory()) {
-            this.reservedRooms = ser.deserialize("rooms.ser").getReservedRooms();
-            this.freeRooms = ser.deserialize("rooms.ser").getFreeRooms();
-            this.busyRooms = ser.deserialize("rooms.ser").getBusyRooms();
+            this.reservedRooms = ser.deserialize(roomsFilePath).getReservedRooms();
+            this.freeRooms = ser.deserialize(roomsFilePath).getFreeRooms();
+            this.busyRooms = ser.deserialize(roomsFilePath).getBusyRooms();
         } else if (configFile.exists() && !configFile.isDirectory()) {
-            configRoomsFromFile("rooms.cfg");
+            configRoomsFromFile(hotelConfigurationPath);
         }
 
     }
+
+    public TotalRooms() {}
 
     @Override
     public void configRoomsFromFile(String path) {

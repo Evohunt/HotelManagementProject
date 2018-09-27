@@ -12,16 +12,18 @@ public class Price implements IPrice, Serializable {
     private int autumnPrice = 0;
     private int winterPrice = 0;
 
-    public Price() {
-        File pricesFile = new File("prices.ser");
+    public Price(String priceFilePath) {
+        File pricesFile = new File(priceFilePath);
         if(pricesFile.exists() && !pricesFile.isDirectory()) {
             PricesSerializer ser = new PricesSerializer();
-            this.summerPrice = ser.deserialize("prices.ser").getSummerPrice();
-            this.springPrice = ser.deserialize("prices.ser").getSpringPrice();
-            this.autumnPrice = ser.deserialize("prices.ser").getAutumnPrice();
-            this.winterPrice = ser.deserialize("prices.ser").getWinterPrice();
+            this.summerPrice = ser.deserialize(priceFilePath).getSummerPrice();
+            this.springPrice = ser.deserialize(priceFilePath).getSpringPrice();
+            this.autumnPrice = ser.deserialize(priceFilePath).getAutumnPrice();
+            this.winterPrice = ser.deserialize(priceFilePath).getWinterPrice();
         }
     }
+
+    public Price() {}
 
     @Override
     public long calculatePriceForRoom(Room room) {

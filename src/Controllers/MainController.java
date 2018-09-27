@@ -38,10 +38,10 @@ public class MainController {
     public RadioButton book_3_beds;
     public RadioButton book_4_beds;
     public Button bookNowBtn;
-    private TotalRooms rooms = new TotalRooms();
+    private TotalRooms rooms = new TotalRooms("rooms.ser", "rooms.cfg");
     private IInputValidation inputValidator = new InputValidation();
     private IDateValidator dateValidator = new DateValidator();
-    private Price price = new Price();
+    private Price price = new Price("prices.ser");
 
     /// GUI Theme
     public Label btnBlueTheme;
